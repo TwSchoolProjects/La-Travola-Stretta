@@ -51,28 +51,28 @@ const FULL_MENU = [
         desc: "Toasted Ciabatta topped with Roma tomatoes, fresh basil, garlic, and extra virgin olive oil.",
         price: "$12.50",
         tags: ["Vegetarian", "Vegan"],
-        img: ""
+        img: "/Assets/Images/Bruschetta 2.jpg"
       },
       {
         name: "Calamari Fritti",
         desc: "Lightly floured squid rings served with a spicy marinara dipping sauce and lemon wedges.", 
         price: "$19.00", 
         tags: ["Seafood"],
-        img: ""
+        img: "/Assets/Images/Calamari.jpg"
       },
       {
         name: "Arancini di Sicilia",
         desc: "Crispy saffron rice balls stuffed with mozzarella and peas, served over a bed of pomodoro sauce.", 
         price: "$15.00",
         tags: ["Vegetarian"],
-        img: ""
+        img: "/Assets/Images/Arancini.jpg"
       },
       {
         name: "Burrata & Prosciutto",
         desc: "Creamy Burrata cheese paired with 24-month aged Prosciutto di Parma and a balsamic reduction.", 
         price: "$22.00", 
         tags: ["Gluten-Free"],
-        img: ""
+        img: "/Assets/Images/Burrata & Prosciutto.jpg"
       }
     ]
   },
@@ -84,35 +84,35 @@ const FULL_MENU = [
         desc: "Fresh egg pasta tossed in a slow-cooked beef and pork ragù with Parmigiano-Reggiano.", 
         price: "$26.00", 
         tags: ["Classic", "Pasta"],
-        img: ""
+        img: "/Assets/Images/Tagliatelle alla Bolognese.jpg"
       },
       {
         name: "Gnocchi al Pomodoro e Burrata",
         desc: "Hand-made potato gnocchi in a light tomato-basil sauce, topped with fresh burrata.", 
         price: "$24.00", 
         tags: ["Vegetarian", "Pasta"],
-        img: ""
+        img: "/Assets/Images/Gnocchi al Pomodoro e Burrata.jpg"
       },
       {
         name: "Pollo alla Parmigiana",
         desc: "Breaded chicken breast topped with melted mozzarella and tomato sauce, served with a side of spaghetti.", 
         price: "$32.00", 
         tags: ["Classic"],
-        img: ""
+        img: "/Assets/Images/Pollo alla Parmigiana.jpg"
       },
       {
         name: "Salmone al Limone",
         desc: "Pan-seared Atlantic salmon with a lemon-caper butter sauce, served with seasonal roasted vegetables.", 
         price: "$36.00", 
         tags: ["Seafood", "Gluten-Free"],
-        img: ""
+        img: "/Assets/Images/Salmone al Limone.jpg"
       },
       {
         name: "Guancia di Manzo",
         desc: "12-hour slow-braised beef cheek in a rich Barolo wine reduction, served over hand-cut golden egg pasta.", 
         price: "$38.00", 
         tags: ["Signature"],
-        img: ""
+        img: "/Assets/Images/Guancia di Manzo.jpg"
       }
     ]
   },
@@ -124,21 +124,21 @@ const FULL_MENU = [
         desc: "Ladyfingers soaked in espresso and Marsala, layered with whipped mascarpone and cocoa powder.", 
         price: "$13.00", 
         tags: ["Vegetarian"],
-        img: ""
+        img: "/Assets/Images/tiramisu.jpg"
       },
       {
         name: "Panna Cotta ai Frutti di Bosco",
         desc: "Velvety vanilla bean custard topped with a wild berry compote.", 
         price: "$11.50", 
         tags: ["Vegetarian", "Gluten-Free"],
-        img: ""
+        img: "/Assets/Images/Panna Cotta ai Frutti di Bosco.jpg"
       },
       {
         name: "Sicilian Cannoli",
         desc: "Crispy pastry shells filled with sweet ricotta and chocolate chips, finished with crushed pistachios.", 
         price: "$10.00", 
         tags: ["Vegetarian", "Contains Nuts"],
-        img: ""
+        img: "/Assets/Images/cannoli.jpg"
       }
     ]
   },
@@ -157,21 +157,21 @@ const FULL_MENU = [
         desc: "6oz pour of Italian red wine.", 
         price: "$14.00", 
         tags: ["Alcoholic"],
-        img: ""
+        img: "/Assets/Images/chianti.jpg"
       },
       {
         name: "Aperol Spritz",
         desc: "Classic Italian wine-based cocktail.", 
         price: "$16.00", 
         tags: ["Alcoholic"],
-        img: ""
+        img: "/Assets/Images/Aperol Spritz.jpg"
       },
       {
         name: "Espresso / Cappuccino",
         desc: "Authentic Italian coffee options.", 
         price: "$4.00 / $5.50", 
         tags: ["Caffeine"],
-        img: ""
+        img: "/Assets/Images/capuccino.jpg"
       }
     ]
   }
