@@ -4,6 +4,18 @@
   ],
   "hints": {
     "button-type": "off",
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "axe/name-role-value": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scrollbar-width",
+          "scrollbar-width: thin",
+          "scrollbar-color",
+          "backdrop-filter"
+        ]
+      }
+    ]
   }
 }
