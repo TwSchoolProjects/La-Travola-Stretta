@@ -1,19 +1,30 @@
-<<<<<<< HEAD
 /* ***Language Selection DropDown*** */
 function setLang(lang) {
-localStorage.setItem("lang", lang);
-document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    el.textContent = translation[lang][key] || "";
+    localStorage.setItem("lang", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translation[lang][key] || "";
 });
-document.getElementById("langMenu").classList.add("hidden");
+
+/* hide dropdown after selection */
+    document.getElementById("langMenu").classList.remove("show");
 }
 
 /* *** Toggle DropDown *** */
 function toggleLangMenu() {
-    document.getElementById("langMenu").classList.toggle("hidden");
+    document.getElementById("langMenu").classList.toggle("show");
 }
 
+/* *** Close when clicking outside *** */
+document.addEventListener("click", function (e) {
+    const menu = document.getElementById("langMenu");
+    const button = document.querySelector(".lang-dropdown button");
+
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.classList.remove("show");
+    }
+});
 
 /* *** Load saved language *** */
 window.addEventListener("load", () => {
@@ -35,7 +46,9 @@ const translation = {
 
     }
 };
-=======
+
+
+// =======
 /* ============================================================
    La Tavola Stretta
    FE-GR4-Restaurant Website Project
@@ -276,4 +289,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
->>>>>>> 7c3d47c94950758d411ae59d3434edab49f1238e
+// >>>>>>> 7c3d47c94950758d411ae59d3434edab49f1238e
