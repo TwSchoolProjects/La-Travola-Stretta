@@ -1,0 +1,630 @@
+/* ============================================================
+   La Tavola Stretta
+   FE-GR4-Restaurant Website Project
+   style.css
+   ============================================================ */
+
+:root {
+  --gold: #18c535;
+  --gold-light: #bba33a;
+  --cream: #dfc790;
+  --bg: #141414;
+  --bg-card: #1b1b1b;
+  --bg-modal: #161616;
+  --text-muted: #8a8a8a;
+  --divider: rgba(201, 168, 76, 0.18);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-ui: "Josefin Sans", sans-serif;
+  --img-size: 160px;
+  --img-radius: 22px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-ui);
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+p {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+/* ─── Decorative background blobs ─── */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-1 {
+  width: 600px;
+  height: 600px;
+  background: var(--gold);
+  top: -200px;
+  left: -200px;
+}
+.blob-2 {
+  width: 500px;
+  height: 500px;
+  background: #7a4f1a;
+  bottom: -100px;
+  right: -150px;
+}
+
+/* ─── Header ─── */
+.menu-header {
+  position: relative;
+  z-index: 1;
+}
+
+.restaurant-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--cream);
+  margin: 0.3rem 0;
+  line-height: 1;
+}
+
+.restaurant-tagline {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0.6rem 0 1rem;
+}
+
+.ornament {
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  opacity: 0.7;
+}
+.ornament.small {
+  font-size: 0.5rem;
+  letter-spacing: 0.4em;
+}
+
+/* ─── Main menu container ─── */
+.menu-container {
+  max-width: 860px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Category label ─── */
+.category-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Menu Item ─── */
+.menu-item {
+  padding: 1.6rem 0;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s var(--transition) forwards;
+}
+.menu-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.menu-item:nth-child(4) {
+  animation-delay: 0.22s;
+}
+.menu-item:nth-child(6) {
+  animation-delay: 0.34s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Dish image ─── */
+.dish-img-wrap {
+  width: var(--img-size);
+  height: var(--img-size);
+  border-radius: var(--img-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.dish-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--img-radius);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  pointer-events: none;
+}
+.menu-item:hover .dish-img-wrap {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.7);
+}
+.dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.menu-item:hover .dish-img {
+  transform: scale(1.06);
+}
+
+/* ─── Dish title row ─── */
+.dish-title-row {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.dish-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--cream);
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Dotted line between name and price ─── */
+.dots-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0.4) 0%,
+    rgba(201, 168, 76, 0.05) 100%
+  );
+  min-width: 20px;
+}
+
+/* ─── Price ─── */
+.dish-price {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  color: var(--gold);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Description ─── */
+.dish-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0.6rem 0 0.8rem;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+/* ─── Tags ─── */
+.dish-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 2px;
+  padding: 2px 8px;
+  font-family: var(--font-ui);
+  font-weight: 400;
+}
+
+/* ─── Divider ─── */
+.item-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--divider);
+}
+
+/* ─── View Full Menu button ─── */
+.btn-view-menu {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-view-menu:hover {
+  background: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.25);
+}
+.btn-view-menu i {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ─── View PDF button ─── */
+.btn-view-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    color var(--transition),
+    background var(--transition);
+}
+.btn-view-pdf:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+/* ═══════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════ */
+
+.menu-modal-content {
+  background: var(--bg-modal);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 6px;
+  color: var(--cream);
+  overflow: hidden;
+}
+
+.menu-modal-header {
+  background: var(--bg-modal);
+  border-bottom: 1px solid var(--divider);
+  padding: 1.5rem 1.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-restaurant-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.btn-close-custom {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.btn-close-custom:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ─── Modal body ─── */
+.modal-body {
+  background: var(--bg-modal);
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+.modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+/* ─── Modal category label ─── */
+.modal-category {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 1.4rem 1.8rem 0.6rem;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* ─── Modal menu item ─── */
+.modal-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.8rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+  transition: background var(--transition);
+}
+.modal-menu-item:hover {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.modal-dish-img-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+}
+.modal-dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.modal-menu-item:hover .modal-dish-img {
+  transform: scale(1.07);
+}
+
+.modal-dish-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-dish-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+.modal-dish-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-weight: 300;
+  margin-bottom: 0.4rem;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.modal-dish-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.modal-tag {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 2px;
+  padding: 1px 6px;
+}
+
+.modal-dish-price {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Modal footer ─── */
+.menu-modal-footer {
+  background: var(--bg-modal);
+  border-top: 1px solid var(--divider);
+  justify-content: center;
+  padding: 1rem 1.8rem;
+}
+.footer-note {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-ui);
+}
+
+/* ─── Bootstrap modal backdrop override ─── */
+.modal-backdrop {
+  backdrop-filter: blur(6px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 576px) {
+  :root {
+    --img-size: 100px;
+  }
+  .dish-name {
+    font-size: 1.3rem;
+  }
+  .dish-price {
+    font-size: 1.2rem;
+  }
+  .modal-dish-img-wrap {
+    width: 64px;
+    height: 64px;
+  }
+  .menu-modal-header {
+    padding: 1.1rem 1.2rem;
+  }
+  .modal-menu-item {
+    padding: 1rem 1.2rem;
+    gap: 0.9rem;
+  }
+  .modal-category {
+    padding: 1.1rem 1.2rem 0.5rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  padding-top: 160px;
+  font-family:
+    "Source Sans 3",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.55;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+h1,
+h2,
+.brand,
+.kicker,
+.pill,
+.menu-card__title {
+  font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+/* --- Contact cards --- */
+.contact__cards {
+  margin-top: 3px;
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--hair);
+  background: color(srgb red rgb(1, 55, 1) blue);
+  box-shadow: 0 14px 44px rgba(var(--rgb-ink), 0.35);
+  border-radius: var(--radius2);
+}
+
+.contact-card {
+  margin-top: 3px;
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--hair);
+  background: black;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+  background-color: #157347;
+}
+
+html {
+  scroll-behavior: smooth;
+}
