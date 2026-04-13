@@ -1,2 +1,2 @@
-# La-Travola-Stretta
+# La-Tavola-Stretta
 Restaurant FrontEnd Team Project
