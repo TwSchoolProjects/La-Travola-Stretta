@@ -1,3 +1,54 @@
+/* ***Language Selection DropDown*** */
+function setLang(lang) {
+    localStorage.setItem("lang", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translation[lang][key] || "";
+});
+
+/* hide dropdown after selection */
+    document.getElementById("langMenu").classList.remove("show");
+}
+
+/* *** Toggle DropDown *** */
+function toggleLangMenu() {
+    document.getElementById("langMenu").classList.toggle("show");
+}
+
+/* *** Close when clicking outside *** */
+document.addEventListener("click", function (e) {
+    const menu = document.getElementById("langMenu");
+    const button = document.querySelector(".lang-dropdown button");
+
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.classList.remove("show");
+    }
+});
+
+/* *** Load saved language *** */
+window.addEventListener("load", () => {
+    setLang(localStorage.getItem("lang") || "en");
+});
+
+
+/* *** Translation *** */
+const translation = {
+    en: {
+
+    },
+
+    fr: {
+
+    },
+
+    it: {
+
+    }
+};
+
+
+// =======
 /* ============================================================
    La Tavola Stretta
    FE-GR4-Restaurant Website Project

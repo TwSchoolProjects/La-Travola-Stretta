@@ -5,86 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Travola Stretta</title>
 
-    <!-- /****************************************/
-            **** swiper (Javascript)****
-    /****************************************/ -->
+<!--  **** CSS ****  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
 
-    <!-- /****************************************/
-            **** box icons ****
-    /****************************************/ -->
-
-    <!--  **** CSS ****  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!--  **** HEADER ****  -->
 
-        <!--  **** HEADER ****  -->
+  <!--  **** HEADER ****  -->
 
+      <!-- Top bar Design  -->
 
 <!-- /****************************************/
-    <!-- /****************************************/
             **** Top bar Design ****
     /****************************************/ -->
     <header class="top-bar">
       <div class="container">
+
         <!-- LEFT -->
         <div class="topbar-left">
-          <a href="http://maps.google.com/?q=123+Street+Montreal+h4p1k2"
-            >123 Street, Montreal h4p 1k2</a
-          >
-          <a href="tel:+123-456-7890">1 123 4568</a>
+          <a href="http://maps.google.com/?q=123+Street+Montreal+h4p1k2">123 Street, Montreal h4p 1k2</a>
+          <a href="tel:+123-456-7890">(123)456-7890</a>
           <a href="mailto:email@latravolastretta">email@latravolastretta</a>
         </div>
 
         <!-- RIGHT -->
         <div class="top-right">
+
+          <!-- Languages dropDown -->
+          <div class="lang-dropdown">
+            <button onclick="toggleLangMenu()">
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" ><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M4 12c0-.9.16-1.76.43-2.57L6 11l2 2v2l2 2 1 1v1.93c-3.94-.49-7-3.86-7-7.93m14.33 4.87c-.65-.53-1.64-.87-2.33-.87v-1c0-1.1-.9-2-2-2h-4v-3c1.1 0 2-.9 2-2V7h1c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 1.83-.63 3.52-1.67 4.87"></path></svg>
+            </button>
+
+            <div id="langMenu" class="hidden">
+              <img src="/Icons/united_states_of_america_round_icon_64.png" alt="English" onclick="setLang('EN')">
+              <img src="/Icons/canada_round_icon_64.png" alt="French" onclick="setLang('FR')">
+              <img src="/Icons/italy_round_icon_64.png" alt="Italian" onclick="setLang('IT')">
+            </div>
+          </div>
           <!-- Languages -->
           <img src="#" alt="French" class="language" />
           <img src="#" alt="English" class="language" />
           <img src="#" alt="Italian" class="language" />
 
           <!-- Social Media Icons -->
-          <ul>
-            <li><a href="http://facebook.com" target="_blank">Facebook</a></li>
-            <li>
-              <a href="http://instragram.com" target="_blank">Instagram</a>
-            </li>
-            <li><a href="http://tiktok.com" target="_blank">TikTok</a></li>
-          </ul>
+            <ul>
+              <li><a href="http://facebook.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"></path></svg></a></li>
+              <li><a href="http://instragram.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008m4.807-8.875a1.078 1.078 0 1 0 0 2.156 1.078 1.078 0 1 0 0-2.156"></path><path d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632 6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419 4.6 4.6 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688 3 3 0 0 1-1.712 1.711 5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311 3 3 0 0 1-1.719-1.711 5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311 3 3 0 0 1 1.712 1.712 5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z"></path></svg></a></li>
+              <li><a href="http://tiktok.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"></path></svg></a></li>
+            </ul>
 
           <!-- Light/Dark Mode Toggle -->
-          <button id="light-dark-mode">button mode</button>
+            <button id="light-dark-mode">
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" ><path d="M12 17.01c2.76 0 5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12s2.25 5.01 5.01 5.01M12 9c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01-3.01-1.35-3.01-3.01S10.34 9 12 9m1 10h-2v3h2zm0-17h-2v3h2zM2 11h3v2H2zm17 0h3v2h-3zM4.22 18.36l.71.71.71.71 1.06-1.06 1.06-1.06-.71-.71-.71-.71-1.06 1.06zM19.78 5.64l-.71-.71-.71-.71-1.06 1.06-1.06 1.06.71.71.71.71 1.06-1.06zm-12.02.7L6.7 5.28 5.64 4.22l-.71.71-.71.71L5.28 6.7l1.06 1.06.71-.71zm8.48 11.32 1.06 1.06 1.06 1.06.71-.71.71-.71-1.06-1.06-1.06-1.06-.71.71z"></path></svg>
+            </button>
 
           <!-- Opening Hours -->
-          <span>Mon-Sat 5pm-11pm</span>
+            <span>Mon-Sat 11am-11pm</span>
         </div>
       </div>
 
-      <!-- /****************************************/
+
+      <!-- **** Header Design **** -->
+
+<!-- /****************************************/
         **** Nav Bar Design ****
     /****************************************/ -->
-      <nav
-        class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm"
-      >
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
           <a class="navbar-brand" href="#">
             <img
-              src="/Assets/Images/LTS logo.png"
+              src="/Images/Logo.png"
               alt="La Tavola Stretta Logo"
               width="100"
               height="50"
             />La Tavola Stretta
           </a>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -92,26 +92,31 @@
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="#">Home</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Menu</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Reservations</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
               </li>
             </ul>
           </div>
+          
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
@@ -123,46 +128,128 @@
               Search
             </button>
           </form>
+
           <div class="header__actions hide-md">
             <a class="btn btn-success" href="#reservation">Reserve a Table</a>
           </div>
+
         </div>
       </nav>
 
-      <!-- /****************************************/
-             **** Header Design ****
-    /****************************************/ -->
+        
     </header>
 
-    <!--  **** MAIN ****  -->
+      <!--  **** MAIN ****  -->
 
     <main>
-      <!-- /****************************************/
-             **** Hero Design ****
+<!-- /****************************************/
+              **** Hero Design ****
     /****************************************/ -->
       <section class="hero">
         <div class="container">
-          <img src="#" alt="background image" />
+          <img src="/Images/background 1.jpg" alt="background image" />
 
-          <!-- HeadLine -->
+      <!-- HeadLine -->
+        <div class="headLine">
+          <h1>La Travola Stretta</h1>
+          <h5>Where Every Seat Tells A Story</h5>
+        </div>
+
+      <!-- Short Description -->
+          <div class="description">
+          <p>La Tavola Stretta is a small, modern Italian restaurant offering an intimate fine-dining experience. We focus on authentic Italian flavors, fresh ingredients, and beautifully crafted dishes served in a cozy yet elegant setting.</p>
+          </div>
+
+      <!-- Annoucement -->
+         <div class="happyhour">
+          <h2>5 à 7 Happy Hour!</h2>
+          <p>Join us from 5 - 7 PM for drinks and Italian bites in a cozy modern setting.</p>
+         </div>
+
+      <!-- Reserve Now Button -->
+         <button>Book Now</button>
+
+      <!-- Right Main Image -->
+          <img src="/Images/Bruschetta 2.jpg" alt="Right-Main-Image">
+
         </div>
       </section>
 
-      <!-- /****************************************/
-         **** About Us section ****
+<!-- /****************************************/
+        **** About Us section ****
     /****************************************/ -->
       <section class="aboutUs">
-        <div class="container"></div>
+        <div class="container">
+
+          <section class="aboutUs">
+            <h1>About Us</h1>
+            <img src="/Images/about us image.jpg" alt="aboutUsImage">
+            <p>La Tavola Stretta is an intimate, modern Italian restaurant focused on authentic flavors and quality ingredients. Led by Chef Leonardo, we create a warm, elegant dining experience where every meal brings people together.</p>
+            <img src="/Images/logo.png" alt="logo">
+          </section>
+
+          <section class="ourStory">
+            <h1>Our Story</h1>
+            <img src="/Images/our story image.jpg" alt="ourStoryImgage">
+            <p>La Tavola Stretta was born from a simple idea: bringing people closer together through authentic Italian food. After years of working in renowned kitchens across Italy, Chef Leonardo dreamed of opening a space that felt intimate, elegant, and true to his roots. </p>
+            <span id="dots">...</span>
+            <span id="more">
+              He brought together a small team of chefs he trusted—Maria, Angelo, and Donaldo—each sharing the same passion for tradition and quality. Together, they created a restaurant where every detail matters, from handmade pasta to the warm, inviting atmosphere. Today, La Tavola Stretta stands as a reflection of their journey, a place where guests gather, connect, and experience the heart of Italy at one table.
+            </span>
+            <button onclick="toggleText()" id="readMoreBtn">Read More...</button>
+          </section>
+
+          <section class="chef">
+            <h1>The Chef</h1>
+            <h3>Leonardo</h3>
+            <img src="/Images/chef image.jpg" alt="chefImg">
+            <p>Born and trained in Florence, Leonardo brings over 20 years of experience in refined Italian cuisine. His passion for authentic flavors and modern presentation led him to La Tavola Stretta, where he crafts a menu that blends tradition with innovation in an intimate dining experience.</p>
+          </section>
+          
+          <section class="team">
+            <div class="container-team">
+              <img src="/Images/team image.jpg" alt="theTeam">
+              <h1>The Team</h1>
+              <p>Our team at La Tavola Stretta is made up of passionate chefs dedicated to authentic Italian cuisine. With experience across Italy, they bring tradition, creativity, and care to every dish, creating a warm and refined dining experience.</p>
+            </div>
+
+            <div class="staff">
+              <div class="container-staff-1">
+                <img src="/Images/staff2.jpg" alt="staff2">
+                <h3>Maria - Head Chef</h3>
+                <p>Trained in Milan with years of fine-dining experience, Maria leads the kitchen with creativity and precision, blending authentic Italian tradition with a modern touch.</p>
+              </div> 
+
+              <div class="container-staff-2">
+                <img src="/Images/staff1.jpg" alt="staff1">
+                <h3>Angelo</h3>
+                <p>With years of experience in Rome, Angelo brings deep knowledge of classic Italian cuisine and a passion for rich, authentic flavors.</p>
+              </div>
+
+              <div class="container-staff-3">
+                <img src="/Images/staff3.jpg" alt="staff3">
+                <h3>Donaldo</h3>
+                <p>Having worked across Italy's coastal regions, Donaldo specializes in fresh, seasonal dishes and adds a bold, vibrant touch to the team's creations.</p>
+              </div>
+
+            </div>
+          </section>
+        </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
           **** Award Dish ection ****
     /****************************************/ -->
       <section class="awardDish">
-        <div class="container"></div>
+        <h1>Award Winning Dish</h1>
+        <div class="container">
+          <img src="/Images/award winning dish.jpg" alt="winning dish">
+          <h2>Polpo Arrosto al Lomone</h2>
+          <p> A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char, served on a bed of creamy mashed potatoes, finished with lemon, olive oil, and fresh herbs. A refined, award-winning dish celebrating bold coastal Italian flavors.</p>
+        </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Menu Section ****
     /****************************************/ -->
       <section class="menu">
@@ -181,7 +268,7 @@
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Assets/Images/Calamari.jpg"
+                    src="/Images/Calamari.jpg"
                     alt="Calamari Fritti"
                     class="dish-img"
                   />
@@ -210,7 +297,7 @@
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Assets/Images/Salmone al Limone.jpg"
+                    src="/Images/Salmone al Limone.jpg"
                     alt="Salmone al Limone "
                     class="dish-img"
                   />
@@ -240,7 +327,7 @@
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Assets/Images/cannoli.png"
+                    src="/Images/cannoli.png"
                     alt="Sicilian Cannoli "
                     class="dish-img"
                   />
@@ -279,7 +366,7 @@
               <!--  **** VIEW PDF OF MENU ****  -->
               <a
                 class="btn-view-pdf"
-                href="/Assets/La Tavola Stretta - full menu.pdf#view=Fit"
+                href="/Images/Tavola Stretta - full menu.pdf#view=Fit"
                 target="_blank"
                 rel="noopener"
               >
@@ -321,7 +408,7 @@
                 </div>
 
                 <div class="modal-body p-0" id="modalBody">
-               
+                
                 </div>
 
                 <div class="modal-footer menu-modal-footer">
@@ -336,128 +423,243 @@
         </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Reservation Section ****
     /****************************************/ -->
       <section class="reservation">
-        <div class="container"></div>
+        <div class="container">
+          <h1>Reservation</h1>
+          <!-- Left Main image -->
+          <img src="/Images/5-7 main pic.jpg" alt="">
+
+          <!-- Form Right -->
+          <form action="" class="form-right">
+            <h2 class="headline-1 text-center">Online Reservation</h2>
+
+            <div class="name-phone-input">
+                <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
+                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
+            </div>
+
+            <div class="form--container">
+              <div class="reservation-icons">
+                <!-- Person Icon -->
+                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                          
+              <select name="Party Size" class="input-field">
+                  <option value="1-person">1 Person</option>
+                  <option value="2-People">2 People</option>
+                  <option value="3-People">3 People</option>
+                  <option value="4-People">4 People</option>
+                  <option value="5-People">5 People</option>
+                  <option value="6-People">6 People</option>
+                  <option value="7-People">7 People</option>
+                  <option value="8-People">8 People</option>
+                  <option value="9-People">9 People</option>
+                  <option value="10-People">10 People</option>
+              </select>
+                <!-- Arrow Down Icon -->
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+              </div>
+
+              <div class="reservation-icons">
+                <!-- Calender Date Icon -->
+                  <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+                <!-- Calender Date Pick -->
+                  <input type="date" name="reservation-date" class="input-field">
+                <!-- Arrow Down Icon -->
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+              </div>
+
+              <div class="icon-wrapper">
+                <!-- Clock Time Icon -->
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                          
+              <select name="person" class="input-field">
+                  <option value="08:00am">08 : 00 am</option>
+                  <option value="09:00am">09 : 00 am</option>
+                  <option value="10:00am">10 : 00 am</option>
+                  <option value="11:00am">11 : 00 am</option>
+                  <option value="12:00am">12 : 00 am</option>
+                  <option value="01:00pm">01 : 00 pm</option>
+                  <option value="02:00pm">02 : 00 pm</option>
+                  <option value="03:00pm">03 : 00 pm</option>
+                  <option value="04:00pm">04 : 00 pm</option>
+                  <option value="05:00pm">05 : 00 pm</option>
+                  <option value="06:00pm">06 : 00 pm</option>
+                  <option value="07:00pm">07 : 00 pm</option>
+                  <option value="08:00pm">08 : 00 pm</option>
+                  <option value="09:00pm">09 : 00 pm</option>
+                  <option value="10:00pm">10 : 00 pm</option>
+              </select>
+                <!-- Arrow Down Icon -->
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+              </div>
+                
+            </div>
+                        
+            <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
+
+            <button type="submit" class="btn btn-secondary">
+                <span class="text text-1">Book A Table</span>
+            </button>
+
+          <!-- Social Media Icons -->
+            <ul>
+              <li><a href="http://facebook.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"></path></svg></a></li>
+              <li><a href="http://instragram.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008m4.807-8.875a1.078 1.078 0 1 0 0 2.156 1.078 1.078 0 1 0 0-2.156"></path><path d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632 6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419 4.6 4.6 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688 3 3 0 0 1-1.712 1.711 5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311 3 3 0 0 1-1.719-1.711 5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311 3 3 0 0 1 1.712 1.712 5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z"></path></svg></a></li>
+              <li><a href="http://tiktok.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"></path></svg></a></li>
+            </ul>
+            
+          </form>
+
+        <!-- Reservation small Icons -->
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Gallery Section ****
     /****************************************/ -->
-      <section class="gallery">
-        <div class="container"></div>
-      </section>
+        <section class="gallery">
+          <div class="container"></div>
+        </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Testimonial Section ****
     /****************************************/ -->
-      <section class="testimonial">
-        <div class="container"></div>
-      </section>
+        <section class="testimonial">
+          <div class="container">
+            <div class="testimonial-container">
+              <h2 class="heading">Valuable <span>Testimonial</span></h2>
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-box mySwiper">
+                        <div class="testimonial-content swiper-wrapper">
 
-      <!-- /****************************************/
+                            <div class="testimonial-slide swiper-slide">
+                                <img src="/Images/testimonial 1.jpg" alt="">
+                                <h3>Jackson Levi</h3>
+                                <p>“Absolutely amazing experience. The atmosphere is intimate and elegant, and every dish felt like a trip to Italy. The pasta was incredible — easily one of the best meals I've had in years.”</p>
+                            </div>
+
+                            <div class="testimonial-slide swiper-slide">
+                                <img src="/Images/testimonial 2.jpg" alt="">
+                                <h3>Gloria Ocean</h3>
+                                <p>“La Tavola Stretta is a hidden gem. The food is authentic, beautifully presented, and full of flavor. The staff made us feel like family from the moment we walked in.”</p>
+                            </div>
+
+                            <div class="testimonial-slide swiper-slide">
+                                <img src="/Images/testimonial 3.jpg" alt="">
+                                <h3>Julian Grayson</h3>
+                                <p>“Everything was perfect — from the cozy modern setting to the unforgettable tasting menu. You can truly feel the passion behind every plate. I'll definitely be coming back.”</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<!-- /****************************************/
             **** Contact Us Section ****
     /****************************************/ -->
-      <section id="contact" class="section py-5">
+        <section id="contact" class="section py-5">
+          <div class="container">
+            <div class="contact-header mb-5">
+              <div class="kicker">CONTACT US</div>
+              <h2>Join us at the table</h2>
+            </div>
+
+            <div class="row gx-5">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <p class="muted">
+                  Walk-ins are welcome when we can fit you in. Reservations are
+                  recommended on weekends.
+                </p>
+
+                <div class="contact__cards mb-4">
+                  <div class="contact-card rounded-3 mb-3">
+                    <div class="contact-card__title">📍 Address</div>
+                    <div class="muted">1248 Rue Duluth Est, Montréal, QC</div>
+                  </div>
+                  <div class="contact-card rounded-3 mb-3">
+                    <div class="contact-card__title">☎ Phone</div>
+                    <div class="muted">(514) 555-0199</div>
+                  </div>
+                  <div class="contact-card rounded-3 mb-3">
+                    <div class="contact-card__title">⏱ Hours</div>
+                    <div class="muted">Tue–Sun 5:00–11:00 PM</div>
+                  </div>
+                </div>
+
+                <div class="header__actions">
+                  <a class="btn btn-success px-4 py-2" href="#reservation"
+                    >Reserve a Table</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.3414!2d-73.5760!3d45.5218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzE4LjUiTiA3M8KwMzQnMzMuNiJX!5e0!3m2!1sen!2sca!4v1647450000000!5m2!1sen!2sca"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  >
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!--  **** FOOTER ****  -->
+
+      <footer class="bg-dark text-white text-center py-4">
+        <img
+          src="/Images/Logo.png"
+          alt="La Tavola Stretta Logo"
+          class="d-block mx-auto"
+          width="200"
+          height="100"
+        />
         <div class="container">
-          <div class="contact-header mb-5">
-            <div class="kicker">CONTACT US</div>
-            <h2>Join us at the table</h2>
+          <div class="d-flex justify-content-center gap-3 mb-2">
+            <a href="#" class="text-success fs-5" aria-label="Facebook"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-success fs-5" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
           </div>
-
-          <div class="row gx-5">
-            <div class="col-md-4 mb-4 mb-md-0">
-              <p class="muted">
-                Walk-ins are welcome when we can fit you in. Reservations are
-                recommended on weekends.
-              </p>
-
-              <div class="contact__cards mb-4">
-                <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">📍 Address</div>
-                  <div class="muted">1248 Rue Duluth Est, Montréal, QC</div>
-                </div>
-                <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">☎ Phone</div>
-                  <div class="muted">(514) 555-0199</div>
-                </div>
-                <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">⏱ Hours</div>
-                  <div class="muted">Tue–Sun 5:00–11:00 PM</div>
-                </div>
-              </div>
-
-              <div class="header__actions">
-                <a class="btn btn-success px-4 py-2" href="#reservation"
-                  >Reserve a Table</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-8">
-              <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.3414!2d-73.5760!3d45.5218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzE4LjUiTiA3M8KwMzQnMzMuNiJX!5e0!3m2!1sen!2sca!4v1647450000000!5m2!1sen!2sca"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                >
-                </iframe>
-              </div>
-            </div>
-          </div>
+          <p class="text-secondary mb-0 small">
+            &copy; 2026 La Tavola Stretta. All rights reserved.
+          </p>
         </div>
-      </section>
-    </main>
+      </footer>
 
-    <!--  **** FOOTER ****  -->
+      <!--  **** BACK TO TOP BUTTON ****  -->
+      <a
+        href="#"
+        id="backToTop"
+        class="btn btn-success shadow-lg"
+        title="Go to top"
+      >
+        <i class="bi bi-arrow-up"></i>
+      </a>
 
-    <footer class="bg-dark text-white text-center py-4">
-      <img
-        src="/Assets/Images/LTS logo.png"
-        alt="La Tavola Stretta Logo"
-        class="d-block mx-auto"
-        width="200"
-        height="100"
-      />
-      <div class="container">
-        <div class="d-flex justify-content-center gap-3 mb-2">
-          <a href="#" class="text-success fs-5" aria-label="Facebook"
-            ><i class="bi bi-facebook"></i
-          ></a>
-          <a href="#" class="text-success fs-5" aria-label="Instagram"
-            ><i class="bi bi-instagram"></i
-          ></a>
-        </div>
-        <p class="text-secondary mb-0 small">
-          &copy; 2026 La Tavola Stretta. All rights reserved.
-        </p>
-      </div>
-    </footer>
+      <!--  **** JAVASCRIPT ****  -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="script.js"></script>
 
-    <!--  **** BACK TO TOP BUTTON ****  -->
-    <a
-      href="#"
-      id="backToTop"
-      class="btn btn-success shadow-lg"
-      title="Go to top"
-    >
-      <i class="bi bi-arrow-up"></i>
-    </a>
-
-    <!--  **** JAVASCRIPT ****  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-
-    <!-- /****************************************/
-            **** Scroll reveal ****
-    /****************************************/ -->
-
-    <!-- /****************************************/
-            **** Swiper js ****
-    /****************************************/ -->
   </body>
 </html>

@@ -51,6 +51,179 @@ p {
     "Helvetica Neue",
     sans-serif;
 }
+
+/* ─── Top Bar ─── */
+.top-bar {
+  background: #1C1C1C;
+  color: #E0D4BE;
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 2px solid #A17F4F;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ───Top Bar Left Side ─── */
+.topbar-left {
+  display:flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.topbar-left a {
+  color: #E0D4BE;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.topbar-left a:hover {
+  opacity: 1;
+  color: #A17F4F;
+}
+
+/* ─── Top Bar Right Side ─── */
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ─── Language DropDown ─── */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-dropdown button {
+  background: transparent;
+  border: none;
+  color: #E0D4BE;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+/* ─── Button ─── */
+.lang-dropdown button:hover {
+  opacity: 1;
+  color: #A17F4F;
+  transform: translateY(-2px);
+}
+
+/* ─── DropDown ─── */
+#langMenu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: none;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: 0.2s ease;
+  z-index: 100;
+}
+
+#langMenu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ─── Flags ─── */
+#langMenu img {
+  width: 28px;
+  height: 25px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#langMenu img:hover {
+  transform: scale(1.15);
+}
+
+
+/* ─── Social Media Icons ─── */
+.top-right ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-right ul li a {
+  color: #E0D4BE;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.top-right ul li a:hover {
+  opacity: 1;
+  color: #A17F4F;
+  transform: translateY(-2px);
+}
+
+#light-dark-mode {
+  background: transparent;
+  border: none;
+  color: #E0D4BE;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+#light-dark-mode:hover {
+  opacity: 1;
+  color: #A17F4F;
+  transform: translateY(-2px);
+}
+
+/* ─── Opening Hours ─── */
+.top-right span {
+  opacity: 0.85;
+  color: #E0D4BE;
+  white-space: nowrap;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .top-bar .container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .topbar-left,
+  .top-right {
+    justify-content: center;
+  }
+}
+
+
 /* ─── Decorative background blobs ─── */
 .bg-blob {
   position: fixed;
