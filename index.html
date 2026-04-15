@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Travola Stretta</title>
 
-    <!--  **** CSS ****  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
+<!--  **** CSS ****  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
   </head>
 
   <body>
@@ -22,16 +18,14 @@
 
     <!-- Top bar Design  -->
 
-    <!-- /****************************************/
+<!-- /****************************************/
             **** Top bar Design ****
     /****************************************/ -->
     <header class="top-bar">
       <div class="container">
         <!-- LEFT -->
         <div class="topbar-left">
-          <a href="http://maps.google.com/?q=123+Street+Montreal+h4p1k2"
-            >1248 Rue Duluth Est, Montréal, QC H2L 1B0</a
-          >
+          <a href="http://maps.google.com/?q=123+Street+Montreal+h4p1k2">1248 Rue Duluth Est, Montréal, QC H2L 1B0</a>
           <a href="tel:+1(514) 555-0199">+1(514) 555-0199</a>
           <a href="mailto:reservations@latravolastretta.com">reservations@latravolastretta.com</a>
         </div>
@@ -41,13 +35,7 @@
           <!-- Languages dropDown -->
           <div class="lang-dropdown">
             <button onclick="toggleLangMenu()">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M4 12c0-.9.16-1.76.43-2.57L6 11l2 2v2l2 2 1 1v1.93c-3.94-.49-7-3.86-7-7.93m14.33 4.87c-.65-.53-1.64-.87-2.33-.87v-1c0-1.1-.9-2-2-2h-4v-3c1.1 0 2-.9 2-2V7h1c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 1.83-.63 3.52-1.67 4.87"
                 ></path>
@@ -55,86 +43,22 @@
             </button>
 
             <div id="langMenu" class="hidden">
-              <img
-                src="/Icons/united_states_of_america_round_icon_64.png"
-                alt="English"
-                onclick="setLang('EN')"
-              />
-              <img
-                src="/Icons/canada_round_icon_64.png"
-                alt="French"
-                onclick="setLang('FR')"
-              />
-              <img
-                src="/Icons/italy_round_icon_64.png"
-                alt="Italian"
-                onclick="setLang('IT')"
-              />
+              <img src="/Icons/united_states_of_america_round_icon_64.png" alt="English" onclick="setLang('EN')"/>
+              <img src="/Icons/canada_round_icon_64.png" alt="French" onclick="setLang('FR')"/>
+              <img src="/Icons/italy_round_icon_64.png" alt="Italian" onclick="setLang('IT')"/>
             </div>
           </div>
-          <!-- Languages -->
-          <img src="#" alt="French" class="language" />
-          <img src="#" alt="English" class="language" />
-          <img src="#" alt="Italian" class="language" />
 
           <!-- Social Media Icons -->
-          <ul>
-            <li>
-              <a href="http://facebook.com" target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"
-                  ></path></svg
-              ></a>
-            </li>
-            <li>
-              <a href="http://instragram.com" target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008m4.807-8.875a1.078 1.078 0 1 0 0 2.156 1.078 1.078 0 1 0 0-2.156"
-                  ></path>
-                  <path
-                    d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632 6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419 4.6 4.6 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688 3 3 0 0 1-1.712 1.711 5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311 3 3 0 0 1-1.719-1.711 5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311 3 3 0 0 1 1.712 1.712 5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z"
-                  ></path></svg
-              ></a>
-            </li>
-            <li>
-              <a href="http://tiktok.com" target="_blank"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"
-                  ></path></svg
-              ></a>
-            </li>
-          </ul>
+            <ul>
+              <li><a href="http://facebook.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"></path></svg></a></li>
+              <li><a href="http://instagram.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008m4.807-8.875a1.078 1.078 0 1 0 0 2.156 1.078 1.078 0 1 0 0-2.156"></path><path d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632 6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419 4.6 4.6 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688 3 3 0 0 1-1.712 1.711 5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311 3 3 0 0 1-1.719-1.711 5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311 3 3 0 0 1 1.712 1.712 5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z"></path></svg></a></li>
+              <li><a href="http://tiktok.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"></path></svg></a></li>
+            </ul>
 
           <!-- Light/Dark Mode Toggle -->
           <button id="light-dark-mode">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 17.01c2.76 0 5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12s2.25 5.01 5.01 5.01M12 9c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01-3.01-1.35-3.01-3.01S10.34 9 12 9m1 10h-2v3h2zm0-17h-2v3h2zM2 11h3v2H2zm17 0h3v2h-3zM4.22 18.36l.71.71.71.71 1.06-1.06 1.06-1.06-.71-.71-.71-.71-1.06 1.06zM19.78 5.64l-.71-.71-.71-.71-1.06 1.06-1.06 1.06.71.71.71.71 1.06-1.06zm-12.02.7L6.7 5.28 5.64 4.22l-.71.71-.71.71L5.28 6.7l1.06 1.06.71-.71zm8.48 11.32 1.06 1.06 1.06 1.06.71-.71.71-.71-1.06-1.06-1.06-1.06-.71.71z"
               ></path>
@@ -148,7 +72,7 @@
 
       <!-- **** Header Design **** -->
 
-      <!-- /****************************************/
+<!-- /****************************************/
         **** Nav Bar Design ****
     /****************************************/ -->
       <nav
@@ -220,166 +144,223 @@
     <!--  **** MAIN ****  -->
 
     <main>
-      <!-- /****************************************/
+<!-- /****************************************/
               **** Hero Design ****
     /****************************************/ -->
-      <section class="hero">
-        <div class="container">
-          <img src="/Images/background 1.jpg" alt="background image" />
+    <section class="hero">
+      <div class="container text-center">
+        
+        <div class="row align-items-center">
 
-          <!-- HeadLine -->
-          <div class="headLine">
-            <h1>La Travola Stretta</h1>
-            <h5>Where Every Seat Tells A Story</h5>
+          <!-- LEFT (Image) -->
+          <div class="col align-self-center">
+            <img src="/Images/Bruschetta 2.jpg" class="hero-img" alt="Right-Main-Image">
           </div>
 
-          <!-- Short Description -->
-          <div class="description">
-            <p>
-              La Tavola Stretta is a small, modern Italian restaurant offering
-              an intimate fine-dining experience. We focus on authentic Italian
-              flavors, fresh ingredients, and beautifully crafted dishes served
-              in a cozy yet elegant setting.
-            </p>
+          <!-- CENTER (Text) -->
+          <div class="col align-self-center">
+
+            <div class="description">
+              <p>
+                La Tavola Stretta is a small, modern Italian restaurant offering an intimate fine-dining experience.
+              </p>  
+            </div>
+
+            <div class="happyhour">
+              <h2>5 à 7 Happy Hour!</h2>
+              <br>
+              <p>Join us from 5 - 7 PM for drinks and Italian bites in a cozy modern setting.</p>
+            </div>
+
+            <button class="btn btn-warning">Book Now</button>
+
           </div>
 
-          <!-- Annoucement -->
-          <div class="happyhour">
-            <h2>5 à 7 Happy Hour!</h2>
-            <p>
-              Join us from 5 - 7 PM for drinks and Italian bites in a cozy
-              modern setting.
-            </p>
+          <!-- RIGHT (Headline) -->
+          <div class="col align-self-center">
+            <div class="headLine">
+              <div class="stairs">
+                <p class="animate__animated animate__fadeInTopRight animate__delay-1s">La</p>
+                <p class="animate__animated animate__fadeInTopRight animate__delay-2s">Tavola</p>
+                <p class="animate__animated animate__fadeInTopRight animate__delay-3s">Stretta</p>
+              </div>
+              <br>
+              <h5>Where Every Seat Tells A Story</h5>
+            </div>
           </div>
 
-          <!-- Reserve Now Button -->
-          <button>Book Now</button>
-
-          <!-- Right Main Image -->
-          <img src="/Images/Bruschetta 2.jpg" alt="Right-Main-Image" />
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
         **** About Us section ****
     /****************************************/ -->
-      <section class="aboutUs">
-        <div class="container">
-          <section class="aboutUs">
+    <section class="aboutUs">
+      <div class="container">
+        <!-- ABOUT US -->
+        <div class="aboutUs-content d-flex align-items-center gap-4 mb-5">
+
+          <img class="about-img img-fluid rounded" src="/Images/about us image.jpg" alt="aboutUsImage">
+
+          <div class="about-text">
             <h1>About Us</h1>
-            <img src="/Images/about us image.jpg" alt="aboutUsImage" />
             <p>
-              La Tavola Stretta is an intimate, modern Italian restaurant
-              focused on authentic flavors and quality ingredients. Led by Chef
-              Leonardo, we create a warm, elegant dining experience where every
-              meal brings people together.
+              La Tavola Stretta is an intimate, modern Italian restaurant focused on authentic flavors and quality ingredients.
+              Led by Chef Leonardo, we create a warm, elegant dining experience where every meal brings people together.
             </p>
-            <img src="/Images/logo.png" alt="logo" />
-          </section>
-
-          <section class="ourStory">
-            <h1>Our Story</h1>
-            <img src="/Images/our story image.jpg" alt="ourStoryImgage" />
-            <p>
-              La Tavola Stretta was born from a simple idea: bringing people
-              closer together through authentic Italian food. After years of
-              working in renowned kitchens across Italy, Chef Leonardo dreamed
-              of opening a space that felt intimate, elegant, and true to his
-              roots.
-            </p>
-            <span id="dots">...</span>
-            <span id="more">
-              He brought together a small team of chefs he trusted—Maria,
-              Angelo, and Donaldo—each sharing the same passion for tradition
-              and quality. Together, they created a restaurant where every
-              detail matters, from handmade pasta to the warm, inviting
-              atmosphere. Today, La Tavola Stretta stands as a reflection of
-              their journey, a place where guests gather, connect, and
-              experience the heart of Italy at one table.
-            </span>
-            <button onclick="toggleText()" id="readMoreBtn">
-              Read More...
-            </button>
-          </section>
-
-          <section class="chef">
-            <h1>The Chef</h1>
-            <h3>Leonardo</h3>
-            <img src="/Images/chef image.jpg" alt="chefImg" />
-            <p>
-              Born and trained in Florence, Leonardo brings over 20 years of
-              experience in refined Italian cuisine. His passion for authentic
-              flavors and modern presentation led him to La Tavola Stretta,
-              where he crafts a menu that blends tradition with innovation in an
-              intimate dining experience.
-            </p>
-          </section>
-
-          <section class="team">
-            <div class="container-team">
-              <img src="/Images/team image.jpg" alt="theTeam" />
-              <h1>The Team</h1>
-              <p>
-                Our team at La Tavola Stretta is made up of passionate chefs
-                dedicated to authentic Italian cuisine. With experience across
-                Italy, they bring tradition, creativity, and care to every dish,
-                creating a warm and refined dining experience.
-              </p>
-            </div>
-
-            <div class="staff">
-              <div class="container-staff-1">
-                <img src="/Images/staff2.jpg" alt="staff2" />
-                <h3>Maria - Head Chef</h3>
-                <p>
-                  Trained in Milan with years of fine-dining experience, Maria
-                  leads the kitchen with creativity and precision, blending
-                  authentic Italian tradition with a modern touch.
-                </p>
-              </div>
-
-              <div class="container-staff-2">
-                <img src="/Images/staff1.jpg" alt="staff1" />
-                <h3>Angelo</h3>
-                <p>
-                  With years of experience in Rome, Angelo brings deep knowledge
-                  of classic Italian cuisine and a passion for rich, authentic
-                  flavors.
-                </p>
-              </div>
-
-              <div class="container-staff-3">
-                <img src="/Images/staff3.jpg" alt="staff3" />
-                <h3>Donaldo</h3>
-                <p>
-                  Having worked across Italy's coastal regions, Donaldo
-                  specializes in fresh, seasonal dishes and adds a bold, vibrant
-                  touch to the team's creations.
-                </p>
-              </div>
-            </div>
-          </section>
+          </div>
+          <img class="about-logo" src="/Images/Logo.png" alt="logo">
         </div>
-      </section>
 
-      <!-- /****************************************/
+        <!-- OUR STORY -->
+        <div class="ourStory container mb-5">
+          <div class="row align-items-center g-4">
+
+            <div class="col-md-6">
+              <img src="/Images/our story image.jpg" class="img-fluid rounded" alt="ourStoryImage">
+            </div>
+
+            <div class="col-md-6">
+              <h1>Our Story</h1>
+
+              <p>
+                La Tavola Stretta was born from a simple idea: bringing people closer together through authentic Italian food.
+                After years of working in renowned kitchens across Italy, Chef Leonardo dreamed of opening a space that felt intimate, elegant, and true to his roots.
+              </p>
+
+              <span id="dots">...</span>
+
+              <span id="more">
+                He brought together a small team of chefs he trusted—Maria, Angelo, and Donaldo—each sharing the same passion for tradition and quality.
+                Together, they created a restaurant where every detail matters.
+              </span>
+
+              <button onclick="toggleText()" id="readMoreBtn">Read More...</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!--   Chef   -->
+        <div id="chef-439">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <p class="cs-review">
+                      <span class="cs-author">Chef Leonardo</span>
+                            
+                        “Born and trained in Florence, Leonardo brings over 20 years of experience in refined Italian cuisine. His passion for authentic flavors and modern presentation led him to La Tavola Stretta, where he crafts a menu that blends tradition with innovation in an intimate dining experience.”</p>
+                </div>
+
+                <picture class="cs-picture">
+                    <img loading="lazy"
+                        decoding="async"
+                        src="/Images/chef image.jpg"
+                        alt="Chef Leonardo"
+                        width="328"
+                        height="540"
+                        aria-hidden="true">
+                </picture>
+            </div>
+        
+            <div id="meet-us-1021">
+              <div class="cs-container">
+
+                <!-- SECTION TEXT -->
+                <div class="cs-content">
+                  <img class="cs-graphic" src="/Images/team image.jpg" alt="The Team">
+                  <h2 class="cs-title">The Team</h2>
+                  <p class="cs-text">
+                    Our team at La Tavola Stretta is made up of passionate chefs dedicated to authentic Italian cuisine.
+                    With experience across Italy, they bring tradition, creativity, and care to every dish.
+                  </p>
+
+                </div>
+
+            <!-- TEAM CARDS -->
+            <ul class="cs-card-group">
+
+              <!-- STAFF 1 -->
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img src="/Images/staff2.jpg" alt="Maria - Head Chef">
+                </picture>
+
+                <div class="cs-info">
+                  <span class="cs-name">Maria</span>
+                  <span class="cs-job">Head Chef</span>
+
+                  <p class="cs-text">Trained in Milan with years of fine-dining experience, Maria leads the kitchen with creativity and precision.</p>
+                </div>
+              </li>
+
+              <!-- STAFF 2 -->
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img src="/Images/staff1.jpg" alt="Angelo">
+                </picture>
+
+                <div class="cs-info">
+                  <span class="cs-name">Angelo</span>
+                  <span class="cs-job">Chef</span>
+                  <p class="cs-text"> With years of experience in Rome, Angelo brings deep knowledge of classic Italian cuisine and rich flavors.</p>
+                </div>
+              </li>
+
+              <!-- STAFF 3 -->
+              <li class="cs-item">
+                <picture class="cs-picture">
+                  <img src="/Images/staff3.jpg" alt="Donaldo">
+                </picture>
+
+                <div class="cs-info">
+                  <span class="cs-name">Donaldo</span>
+                  <span class="cs-job">Chef</span>
+
+                  <p class="cs-text">Specializes in fresh coastal dishes and adds a bold, vibrant touch to the team's creations.</p>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+         </div>
+    </section>
+
+<!-- /****************************************/
           **** Award Dish ection ****
     /****************************************/ -->
-      <section class="awardDish">
-        <h1>Award Winning Dish</h1>
-        <div class="container">
-          <img src="/Images/award winning dish.jpg" alt="winning dish" />
-          <h2>Polpo Arrosto al Lomone</h2>
-          <p>
-            A tender, slow-cooked octopus tentacle, lightly grilled for a
-            perfect char, served on a bed of creamy mashed potatoes, finished
-            with lemon, olive oil, and fresh herbs. A refined, award-winning
-            dish celebrating bold coastal Italian flavors.
-          </p>
-        </div>
-      </section>
+    <section class="awardDish py-5">
+      <div class="container text-center">
 
-      <!-- /****************************************/
+        <h1 class="mb-4">Award Winning Dish</h1>
+
+        <div class="row justify-content-center align-items-center">
+
+          <!-- Image -->
+          <div class="col-md-6">
+            <img src="/Images/award winning dish.jpg" class="  awardDish-img" alt="winning dish">
+          </div>
+
+          <!-- Text -->
+          <div class="col-md-6 text-md-start mt-4 mt-md-0">
+
+            <h2>Polpo Arrosto al Lomone</h2>
+
+            <p>
+              A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char,
+              served on a bed of creamy mashed potatoes, finished with lemon, olive oil,
+              and fresh herbs. A refined, award-winning dish celebrating bold coastal
+              Italian flavors.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+<!-- /****************************************/
             **** Menu Section ****
     /****************************************/ -->      
     
@@ -554,7 +535,7 @@
         </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Reservation Section ****
     /****************************************/ -->
       <section id="reservation" class="py-5">
@@ -720,65 +701,68 @@
         </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Gallery Section ****
     /****************************************/ -->
       <section class="gallery">
         <div class="container"></div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Testimonial Section ****
     /****************************************/ -->
-      <section class="testimonial">
-        <div class="container">
-          <div class="testimonial-container">
-            <h2 class="heading">Valuable <span>Testimonial</span></h2>
-            <div class="testimonial-wrapper">
-              <div class="testimonial-box mySwiper">
-                <div class="testimonial-content swiper-wrapper">
-                  <div class="testimonial-slide swiper-slide">
-                    <img src="/Images/testimonial 1.jpg" alt="" />
-                    <h3>Jackson Levi</h3>
-                    <p>
-                      “Absolutely amazing experience. The atmosphere is intimate
-                      and elegant, and every dish felt like a trip to Italy. The
-                      pasta was incredible — easily one of the best meals I've
-                      had in years.”
-                    </p>
-                  </div>
+        <section class="testimonial py-5">
+          <div class="container">
 
-                  <div class="testimonial-slide swiper-slide">
-                    <img src="/Images/testimonial 2.jpg" alt="" />
-                    <h3>Gloria Ocean</h3>
-                    <p>
-                      “La Tavola Stretta is a hidden gem. The food is authentic,
-                      beautifully presented, and full of flavor. The staff made
-                      us feel like family from the moment we walked in.”
-                    </p>
-                  </div>
+            <h2 class="heading text-center mb-4">
+              Valuable <span>Testimonial</span>
+            </h2>
 
-                  <div class="testimonial-slide swiper-slide">
-                    <img src="/Images/testimonial 3.jpg" alt="" />
-                    <h3>Julian Grayson</h3>
-                    <p>
-                      “Everything was perfect — from the cozy modern setting to
-                      the unforgettable tasting menu. You can truly feel the
-                      passion behind every plate. I'll definitely be coming
-                      back.”
-                    </p>
-                  </div>
+            <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+              <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active text-center">
+                  <img src="/Images/testimonial 1.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <h3>Jackson Levi</h3>
+                  <p>“Absolutely amazing experience. The atmosphere is intimate and elegant, and every dish felt like a trip to Italy. The pasta was incredible — easily one of the best meals I've had in years.”</p>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item text-center">
+                  <img src="/Images/testimonial 2.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <h3>Gloria Ocean</h3>
+                  <p>“La Tavola Stretta is a hidden gem. The food is authentic, beautifully presented, and full of flavor. The staff made us feel like family from the moment we walked in.”</p>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item text-center">
+                  <img src="/Images/testimonial 3.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <h3>Julian Grayson</h3>
+                  <p>“Everything was perfect — from the cozy modern setting to the unforgettable tasting menu. You can truly feel the passion behind every plate. I'll definitely be coming back.”</p>
+                </div>
+
               </div>
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+
+              <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- /****************************************/
+<!-- /****************************************/
             **** Contact Us Section ****
     /****************************************/ -->
       <section id="contact" class="section py-5">

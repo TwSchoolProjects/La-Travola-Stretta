@@ -19,17 +19,38 @@
   --img-radius: 22px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* CSS ORDER */ 
+/* 1. Reset */
+/* 2. Global styles */
+/* 3. Layout (header, footer) */
+/* 4. Components (buttons, cards) */
+/* 5. Responsive */
 
-/* ─── Reset & Base ─── */
+/* Dark mode color palette
+   Deep Green : #1A4F2F
+   Deep Red : #4F1A22
+   Warm Neutral : #E0D4BE
+   Golden Accent : #A17F4F
+   Banckground Black : #1C1C1C */
+
+/* Light mode color palette
+   Green : #1F6B3A
+   Red : #6B1F2A
+   Neutral : #F3E7D3
+   Golden : #BFA06A
+   Banckground Black-light : #2B2B2B */
+
+/* ─── **** Reset ****  ─── */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* ─── **** Base **** ─── */
 body {
-  background-color: var(--bg);
-  color: var(--cream);
+  background-color: #1C1C1C;
+  color: #E0D4BE;
   font-family: var(--font-ui);
   font-weight: 300;
   min-height: 100vh;
@@ -37,22 +58,37 @@ body {
   position: relative;
 }
 
-p {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* ─── Top Bar ─── */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 60px 0;
+}
+
+p {
+  font-family:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  "Open Sans",
+  "Helvetica Neue",
+  sans-serif;
+}
+
+/* ─── *** Top Bar***  ─── */
 .top-bar {
   background: #1C1C1C;
   color: #E0D4BE;
@@ -63,7 +99,7 @@ p {
 
 .top-bar .container {
   display: flex;
-  justify-content: space-between;
+  container-team: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -157,7 +193,6 @@ p {
   transform: scale(1.15);
 }
 
-
 /* ─── Social Media Icons ─── */
 .top-right ul {
   display: flex;
@@ -208,21 +243,479 @@ p {
   color: #E0D4BE;
   white-space: nowrap;
 }
-
-/* ─── Responsive ─── */
-@media (max-width: 768px) {
-  .top-bar .container {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .topbar-left,
-  .top-right {
-    justify-content: center;
-  }
+/* ================================
+              HERO 
+================================ */
+.hero * {
+  font-family: inherit;
 }
 
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: url("/Images/background 1.jpg") no-repeat center/cover;
+}
+
+/* overlay */
+.hero::before {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;             
+  gap: 30px;
+  align-items: center;
+}
+
+/* TEXT */
+.headLine {
+  text-align: center;
+}
+
+.headLine h1 {
+  font-size: 2.5rem; 
+}
+
+.headLine h5 {
+  color: #A17F4F;
+}
+
+/* CENTER CONTENT */
+.description,
+.happyhour,
+.hero button {
+  text-align: center;
+}
+
+.description {
+  margin-top: 5px;
+}
+
+.happyhour {
+  margin: 15px;
+}
+
+/* ANIMATION */
+.happyhour h2 {
+  animation: bounceSoft 2.5s infinite;
+  margin: 20px 0;
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* BUTTON */
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #1A4F2F;
+  border: none;
+  color: #A17F4F;
+  cursor: pointer;
+}
+
+.hero-img {
+  opacity: 0.6;
+  border-radius: 45px;
+}
+/* CENTER */
+
+/* LEFT SIDE */
+.stairs p {
+  margin: 0;
+  font-size: 3.5rem;
+  transition: transform 0.3s ease;
+}
+
+.stairs p:nth-child(1) {
+  transform: translateX(0);
+}
+
+.stairs p:nth-child(2) {
+  transform: translateX(30px);
+}
+
+.stairs p:nth-child(3) {
+  transform: translateX(60px);
+}
+
+/* ========================= */
+/*        About Us           */
+/* ========================= */
+section {
+  margin-bottom: 80px;
+}
+
+.aboutUs-content {
+  position: relative;
+}
+
+.about-img {
+  width: 40%;
+  height: auto;
+}
+
+.about-text {
+  width: 60%;
+}
+
+.about-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.aboutUs-content {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+  align-items: stretch;
+}
+
+/* LEFT IMAGE (VERTICAL) */
+.about-img {
+  width: 40%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  opacity: .8;
+}
+
+/* RIGHT TEXT */
+.about-text {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #A17F4F;
+}
+
+/* SMALL LOGO OVERLAPPING BOTTOM RIGHT */
+.about-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 38px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* ========================= */
+/*        OUR STORY       */
+/* ========================= */
+.ourStory {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  max-width: 800px;
+  margin: 80px auto; /* centers whole section */
+  padding: 15px;
+}
+
+/* LEFT IMAGE (horizontal rectangle) */
+.story-img {
+  width: 35%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* RIGHT TEXT */
+.story-text {
+  width: 45%;
+  overflow: hidden;
+}
+
+.story-text h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.story-text p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* hide extra text */
+#more {
+  display: none;
+}
+
+/* button */
+#readMoreBtn {
+  margin-top: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/* READ MORE */
+#more {
+  display: none;
+}
+
+#readMoreBtn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  color: #A17F4F;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#readMoreBtn:hover {
+  background: #7a4f1a;
+}
+
+/* ========================= */
+/*        Chef      */
+/* ========================= */
+#chef-439 {
+  padding: 80px 20px;
+}
+
+#chef-439 .cs-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#chef-439 .cs-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#chef-439 .cs-review {
+  font-size: 18px;
+  line-height: 1.6;
+  position: relative;
+}
+
+#chef-439 .cs-author {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #A17F4F;
+  font-size: 30px;
+}
+
+#chef-439 .cs-picture {
+  flex: 0 0 40%;
+}
+
+#chef-439 .cs-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
+
+
+/* ========================= */
+/*        TEAM SECTION       */
+/* ========================= */
+
+#meet-us-1021 {
+    padding: var(--sectionPadding);
+    background-color: #1a1a1a;
+}
+
+/* container */
+#meet-us-1021 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+}
+
+/* top content */
+#meet-us-1021 .cs-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#meet-us-1021 .cs-graphic {
+  width: 100%;
+  max-width: 450px;  
+  height: auto;
+  border-radius: 20px; 
+  display: block;
+
+  transform: translateY(20px);
+}
+
+#meet-us-1021 .cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--bodyTextColorWhite);
+    margin-bottom: 1rem;
+}
+
+#meet-us-1021 .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.6em;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+    max-width: 40rem;
+}
+
+/* cards layout */
+#meet-us-1021 .cs-card-group {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* each card */
+#meet-us-1021 .cs-item {
+    width: 100%;
+    max-width: 25rem;
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+#meet-us-1021 .cs-item:hover {
+    transform: translateY(-8px);
+}
+
+/* image */
+#meet-us-1021 .cs-picture {
+    width: 100%;
+    height: 300px;
+    display: block;
+    overflow: hidden;
+}
+
+#meet-us-1021 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#meet-us-1021 .cs-item:hover .cs-picture img {
+    transform: scale(1.05);
+}
+
+/* text section */
+#meet-us-1021 .cs-info {
+    padding: 1.2rem;
+    text-align: center;
+}
+
+/* name */
+#meet-us-1021 .cs-name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--bodyTextColorWhite);
+    margin-bottom: 0.3rem;
+}
+
+/* job */
+#meet-us-1021 .cs-job {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+}
+
+/* description (if you use it later) */
+#meet-us-1021 .cs-info .cs-text {
+    font-size: 0.95rem;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.75;
+}
+
+/* ========================= */
+/*        RESPONSIVE        */
+/* ========================= */
+
+@media (min-width: 768px) {
+    #meet-us-1021 .cs-item {
+        flex: 0 0 30%;
+    }
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+                            
+
+
+/* ================================
+          Award Dish 
+================================ */
+
+.awardDish-img {
+  border-radius: 45px;
+}
 
 /* ─── Decorative background blobs ─── */
 .bg-blob {
@@ -248,7 +741,7 @@ p {
   right: -150px;
 }
 
-/* ─── Header ─── */
+/* ─── **** Header **** ─── */
 .menu-header {
   position: relative;
   z-index: 1;
@@ -283,6 +776,8 @@ p {
   font-size: 0.5rem;
   letter-spacing: 0.4em;
 }
+
+/* ─── **** Menu Section ****  ─── */
 
 /* ─── Main menu container ─── */
 .menu-container {
@@ -339,8 +834,7 @@ p {
     transform var(--transition),
     box-shadow var(--transition);
 }
-.dish-img-wrap::after {
-  content: "";
+.dish-img-wrap::after {container-team: "";
   position: absolute;
   inset: 0;
   border-radius: var(--img-radius);
@@ -495,7 +989,7 @@ p {
    MODAL
 ═══════════════════════════════════════════════════ */
 
-.menu-modal-content {
+.menu-container-team {
   background: var(--bg-modal);
   border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: 6px;
@@ -508,7 +1002,7 @@ p {
   border-bottom: 1px solid var(--divider);
   padding: 1.5rem 1.8rem 1.2rem;
   display: flex;
-  justify-content: space-between;
+  container-team: space-between;
   align-items: flex-start;
 }
 
@@ -530,7 +1024,7 @@ p {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  container-team: center;
   cursor: pointer;
   transition:
     background var(--transition),
@@ -656,7 +1150,7 @@ p {
 .menu-modal-footer {
   background: var(--bg-modal);
   border-top: 1px solid var(--divider);
-  justify-content: center;
+  container-team: center;
   padding: 1rem 1.8rem;
 }
 .footer-note {
@@ -670,33 +1164,6 @@ p {
 /* ─── Bootstrap modal backdrop override ─── */
 .modal-backdrop {
   backdrop-filter: blur(6px);
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 576px) {
-  :root {
-    --img-size: 100px;
-  }
-  .dish-name {
-    font-size: 1.3rem;
-  }
-  .dish-price {
-    font-size: 1.2rem;
-  }
-  .modal-dish-img-wrap {
-    width: 64px;
-    height: 64px;
-  }
-  .menu-modal-header {
-    padding: 1.1rem 1.2rem;
-  }
-  .modal-menu-item {
-    padding: 1rem 1.2rem;
-    gap: 0.9rem;
-  }
-  .modal-category {
-    padding: 1.1rem 1.2rem 0.5rem;
-  }
 }
 
 * {
@@ -743,10 +1210,10 @@ h2 {
   line-height: 1.1;
 }
 
-img {
+/* img {
   max-width: 100%;
   display: block;
-}
+} */
 
 a {
   color: inherit;
@@ -788,7 +1255,7 @@ a {
   border-radius: 50%;
   display: none;
   align-items: center;
-  justify-content: center;
+  container-team: center;
   font-size: 24px;
   transition: all 0.3s ease;
 }
@@ -800,4 +1267,84 @@ a {
 
 html {
   scroll-behavior: smooth;
+}
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*----------------------------------- */
+
+
+
+/* ================================
+   SMALL DEVICES (575px+)
+================================ */
+@media (min-width: 575px) {
+/* MENU */
+
+  :root {
+    --img-size: 100px;
+  }
+
+  .dish-name {
+    font-size: 1.3rem;
+  }
+
+  .dish-price {
+    font-size: 1.2rem;
+  }
+
+  .modal-dish-img-wrap {
+    width: 64px;
+    height: 64px;
+  }
+
+  .menu-modal-header {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .modal-menu-item {
+    padding: 1rem 1.2rem;
+    gap: 0.9rem;
+  }
+
+  .modal-category {
+    padding: 1.1rem 1.2rem 0.5rem;
+  }
+
+ 
+}
+
+/* ================================
+   TABLETS (768px+)
+================================ */
+@media (min-width: 768px) {
+
+  body {
+    background-color: #1C1C1C;
+    color: #E0D4BE;
+  }
+
+  .headLine {
+    text-align: center;
+  }
+
+}
+
+/* ================================
+   DESKTOP (992px+)
+================================ */
+@media (min-width: 992px)  and (max-width: 1200px){
+
+  body {
+    background-color: #1C1C1C;
+    color: #E0D4BE;
+  }
+
+
+  .headLine {
+    text-align: left;
+    justify-self: start;
+  }
+
 }
