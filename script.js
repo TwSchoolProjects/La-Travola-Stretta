@@ -1,52 +1,44 @@
 /* ***Language Selection DropDown*** */
 function setLang(lang) {
-    localStorage.setItem("lang", lang);
+  localStorage.setItem("lang", lang);
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = translation[lang][key] || "";
-});
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translation[lang][key] || "";
+  });
 
-/* hide dropdown after selection */
-    document.getElementById("langMenu").classList.remove("show");
+  /* hide dropdown after selection */
+  document.getElementById("langMenu").classList.remove("show");
 }
 
 /* *** Toggle DropDown *** */
 function toggleLangMenu() {
-    document.getElementById("langMenu").classList.toggle("show");
+  document.getElementById("langMenu").classList.toggle("show");
 }
 
 /* *** Close when clicking outside *** */
 document.addEventListener("click", function (e) {
-    const menu = document.getElementById("langMenu");
-    const button = document.querySelector(".lang-dropdown button");
+  const menu = document.getElementById("langMenu");
+  const button = document.querySelector(".lang-dropdown button");
 
-    if (!menu.contains(e.target) && !button.contains(e.target)) {
-        menu.classList.remove("show");
-    }
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("show");
+  }
 });
 
 /* *** Load saved language *** */
 window.addEventListener("load", () => {
-    setLang(localStorage.getItem("lang") || "en");
+  setLang(localStorage.getItem("lang") || "en");
 });
-
 
 /* *** Translation *** */
 const translation = {
-    en: {
+  en: {},
 
-    },
+  fr: {},
 
-    fr: {
-
-    },
-
-    it: {
-
-    }
+  it: {},
 };
-
 
 // =======
 /* ============================================================
@@ -56,7 +48,7 @@ const translation = {
    ============================================================ */
 
 const FULL_MENU = [
-  { 
+  {
     category: "Antipasti/Appetizers",
     items: [
       {
@@ -64,130 +56,130 @@ const FULL_MENU = [
         desc: "Toasted Ciabatta topped with Roma tomatoes, fresh basil, garlic, and extra virgin olive oil.",
         price: "$12.50",
         tags: ["Vegetarian", "Vegan"],
-        img: "/Assets/Images/Bruschetta 2.jpg"
+        img: "./Images/Bruschetta 2.jpg",
       },
       {
         name: "Calamari Fritti",
-        desc: "Lightly floured squid rings served with a spicy marinara dipping sauce and lemon wedges.", 
-        price: "$19.00", 
+        desc: "Lightly floured squid rings served with a spicy marinara dipping sauce and lemon wedges.",
+        price: "$19.00",
         tags: ["Seafood"],
-        img: "/Assets/Images/Calamari.jpg"
+        img: "./Images/Calamari.jpg",
       },
       {
         name: "Arancini di Sicilia",
-        desc: "Crispy saffron rice balls stuffed with mozzarella and peas, served over a bed of pomodoro sauce.", 
+        desc: "Crispy saffron rice balls stuffed with mozzarella and peas, served over a bed of pomodoro sauce.",
         price: "$15.00",
         tags: ["Vegetarian"],
-        img: "/Assets/Images/Arancini.jpg"
+        img: "./Images/Arancini.jpg",
       },
       {
         name: "Burrata & Prosciutto",
-        desc: "Creamy Burrata cheese paired with 24-month aged Prosciutto di Parma and a balsamic reduction.", 
-        price: "$22.00", 
+        desc: "Creamy Burrata cheese paired with 24-month aged Prosciutto di Parma and a balsamic reduction.",
+        price: "$22.00",
         tags: ["Gluten-Free"],
-        img: "/Assets/Images/Burrata & Prosciutto.jpg"
-      }
-    ]
+        img: "./Images/Burrata & Prosciutto.jpg",
+      },
+    ],
   },
   {
     category: "Secondi/Main Dishes",
     items: [
       {
-        name: "Tagliatelle alla Bolognese",
-        desc: "Fresh egg pasta tossed in a slow-cooked beef and pork ragù with Parmigiano-Reggiano.", 
-        price: "$26.00", 
-        tags: ["Classic", "Pasta"],
-        img: "/Assets/Images/Tagliatelle alla Bolognese.jpg"
+        name: "Polpo Arrosto al Lomone",
+        desc: "A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char, served on a bed of creamy mashed potatoes, finished with lemon, olive oil, and fresh herbs.",
+        price: "$26.00",
+        tags: ["Seafood", "Award-winning", "Signature"],
+        img: "./Images/award winning dish.jpg",
       },
       {
         name: "Gnocchi al Pomodoro e Burrata",
-        desc: "Hand-made potato gnocchi in a light tomato-basil sauce, topped with fresh burrata.", 
-        price: "$24.00", 
+        desc: "Hand-made potato gnocchi in a light tomato-basil sauce, topped with fresh burrata.",
+        price: "$24.00",
         tags: ["Vegetarian", "Pasta"],
-        img: "/Assets/Images/Gnocchi al Pomodoro e Burrata.jpg"
+        img: "./Images/Gnocchi-al-Pomodoro-e-Burrata.png",
       },
       {
         name: "Pollo alla Parmigiana",
-        desc: "Breaded chicken breast topped with melted mozzarella and tomato sauce, served with a side of spaghetti.", 
-        price: "$32.00", 
+        desc: "Breaded chicken breast topped with melted mozzarella and tomato sauce, served with a side of spaghetti.",
+        price: "$32.00",
         tags: ["Classic"],
-        img: "/Assets/Images/Pollo alla Parmigiana.jpg"
+        img: "./Images/Pollo%20alla%20Parmigiana.png",
       },
       {
         name: "Salmone al Limone",
-        desc: "Pan-seared Atlantic salmon with a lemon-caper butter sauce, served with seasonal roasted vegetables.", 
-        price: "$36.00", 
+        desc: "Pan-seared Atlantic salmon with a lemon-caper butter sauce, served with seasonal roasted vegetables.",
+        price: "$36.00",
         tags: ["Seafood", "Gluten-Free"],
-        img: "/Assets/Images/Salmone al Limone.jpg"
+        img: "./Images/Salmone al Limone.jpg",
       },
       {
         name: "Guancia di Manzo",
-        desc: "12-hour slow-braised beef cheek in a rich Barolo wine reduction, served over hand-cut golden egg pasta.", 
-        price: "$38.00", 
+        desc: "12-hour slow-braised beef cheek in a rich Barolo wine reduction, served over hand-cut golden egg pasta.",
+        price: "$38.00",
         tags: ["Signature"],
-        img: "/Assets/Images/Guancia di Manzo.jpg"
-      }
-    ]
+        img: "./Images/guancia di manzo.jpg",
+      },
+    ],
   },
   {
     category: "Dolci/Desserts",
     items: [
       {
         name: "Classic Tiramisu",
-        desc: "Ladyfingers soaked in espresso and Marsala, layered with whipped mascarpone and cocoa powder.", 
-        price: "$13.00", 
+        desc: "Ladyfingers soaked in espresso and Marsala, layered with whipped mascarpone and cocoa powder.",
+        price: "$13.00",
         tags: ["Vegetarian"],
-        img: "/Assets/Images/tiramisu.jpg"
+        img: "./Images/tiramisu.jpg",
       },
       {
         name: "Panna Cotta ai Frutti di Bosco",
-        desc: "Velvety vanilla bean custard topped with a wild berry compote.", 
-        price: "$11.50", 
+        desc: "Velvety vanilla bean custard topped with a wild berry compote.",
+        price: "$11.50",
         tags: ["Vegetarian", "Gluten-Free"],
-        img: "/Assets/Images/Panna Cotta ai Frutti di Bosco.jpg"
+        img: "./Images/Panna Cotta ai Frutti di Bosco.png",
       },
       {
         name: "Sicilian Cannoli",
-        desc: "Crispy pastry shells filled with sweet ricotta and chocolate chips, finished with crushed pistachios.", 
-        price: "$10.00", 
-        tags: ["Vegetarian", "Contains Nuts"],
-        img: "/Assets/Images/cannoli.jpg"
-      }
-    ]
+        desc: "Crispy pastry shells filled with sweet ricotta and chocolate chips, finished with crushed pistachios.",
+        price: "$10.00",
+        tags: ["Contains Nuts"],
+        img: "./Images/cannoli.png",
+      },
+    ],
   },
   {
     category: "Bevande/Drinks",
     items: [
       {
         name: "San Pellegrino Sparkling Water",
-        desc: "750ml bottle of sparkling mineral water.", 
-        price: "$7.50", 
+        desc: "750ml bottle of sparkling mineral water.",
+        price: "$7.50",
         tags: ["Non-Alcoholic"],
-        img: ""
+        img: "./Images/SanPellegrino.jpg",
       },
       {
         name: "Glass of Chianti Classico",
-        desc: "6oz pour of Italian red wine.", 
-        price: "$14.00", 
+        desc: "6oz pour of Italian red wine.",
+        price: "$14.00",
         tags: ["Alcoholic"],
-        img: "/Assets/Images/chianti.jpg"
+        img: "./Images/chianti.jpg",
       },
       {
         name: "Aperol Spritz",
-        desc: "Classic Italian wine-based cocktail.", 
-        price: "$16.00", 
+        desc: "Classic Italian wine-based cocktail.",
+        price: "$16.00",
         tags: ["Alcoholic"],
-        img: "/Assets/Images/Aperol Spritz.jpg"
+        img: "./Images/AperolSpritz.jpg",
       },
       {
         name: "Espresso / Cappuccino",
-        desc: "Authentic Italian coffee options.", 
-        price: "$4.00 / $5.50", 
+        desc: "Authentic Italian coffee options.",
+        price: "$4.00 / $5.50",
         tags: ["Caffeine"],
-        img: "/Assets/Images/capuccino.jpg"
-      }
-    ]
-  }
+        img: "./Images/capuccino.jpg",
+      },
+    ],
+  },
 ];
 
 /* ─── Build the modal HTML ─── */
@@ -197,12 +189,12 @@ function buildModal() {
 
   let html = "";
 
-  FULL_MENU.forEach(section => {
+  FULL_MENU.forEach((section) => {
     html += `<div class="modal-category">${section.category}</div>`;
 
-    section.items.forEach(item => {
+    section.items.forEach((item) => {
       const tagsHtml = item.tags
-        .map(t => `<span class="modal-tag">${t}</span>`)
+        .map((t) => `<span class="modal-tag">${t}</span>`)
         .join("");
 
       html += `
@@ -233,18 +225,18 @@ function buildModal() {
 function initScrollReveal() {
   const items = document.querySelectorAll(".menu-item");
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(e => {
+    (entries) => {
+      entries.forEach((e) => {
         if (e.isIntersecting) {
           e.target.style.animationPlayState = "running";
           observer.unobserve(e.target);
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
 
-  items.forEach(el => {
+  items.forEach((el) => {
     // Pause the CSS animation initially; let observer trigger it
     el.style.animationPlayState = "paused";
     observer.observe(el);
@@ -269,23 +261,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const backToTopBtn = document.getElementById("backToTop");
+  const backToTopBtn = document.getElementById("backToTop");
 
-    // Show or hide the button based on scroll position
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 400) {
-            backToTopBtn.style.display = "flex";
-        } else {
-            backToTopBtn.style.display = "none";
-        }
-    });
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) {
+      backToTopBtn.style.display = "flex";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
 
-    // Smoothly scroll to the top when clicked
-    backToTopBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+  // Smoothly scroll to the top when clicked
+  backToTopBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
+  });
 });
