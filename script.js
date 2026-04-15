@@ -1,50 +1,7 @@
-/* ***Language Selection DropDown*** */
-function setLang(lang) {
-  localStorage.setItem("lang", lang);
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    el.textContent = translation[lang][key] || "";
-  });
-
-  /* hide dropdown after selection */
-  document.getElementById("langMenu").classList.remove("show");
-}
-
-/* *** Toggle DropDown *** */
-function toggleLangMenu() {
-  document.getElementById("langMenu").classList.toggle("show");
-}
-
-/* *** Close when clicking outside *** */
-document.addEventListener("click", function (e) {
-  const menu = document.getElementById("langMenu");
-  const button = document.querySelector(".lang-dropdown button");
-
-  if (!menu.contains(e.target) && !button.contains(e.target)) {
-    menu.classList.remove("show");
-  }
-});
-
-/* *** Load saved language *** */
-window.addEventListener("load", () => {
-  setLang(localStorage.getItem("lang") || "en");
-});
-
-/* *** Translation *** */
-const translation = {
-  en: {},
-
-  fr: {},
-
-  it: {},
-};
-
-// =======
 /* ============================================================
    La Tavola Stretta
    FE-GR4-Restaurant Website Project
-   style.css
+    script.js
    ============================================================ */
 
 const FULL_MENU = [
@@ -221,6 +178,117 @@ function buildModal() {
   modalBody.innerHTML = html;
 }
 
+/* ─── Search logic ─── */
+function initSearch() {
+  const searchInput = document.querySelector('input[type="search"]');
+  const searchForm  = document.querySelector('form[role="search"]');
+  const modalBody   = document.getElementById("modalBody");
+  if (!searchInput || !modalBody) return;
+
+  // "no results" message
+  const noResults = document.createElement("p");
+  noResults.id          = "no-results-msg";
+  noResults.className   = "text-muted text-center mt-3";
+  noResults.textContent = "No menu items found.";
+  noResults.style.display = "none";
+  modalBody.appendChild(noResults);
+
+  const modalEl = document.getElementById("fullMenuModal");
+  const bsModal = modalEl ? new bootstrap.Modal(modalEl) : null;
+
+  function performSearch(query) {
+    const trimmed = query.trim().toLowerCase();
+    const menuItems    = document.querySelectorAll(".modal-menu-item");
+    const categoryDivs = document.querySelectorAll(".modal-category");
+
+    if (trimmed === "") {
+      menuItems.forEach((item) => (item.style.display = ""));
+      categoryDivs.forEach((div) => (div.style.display = ""));
+      noResults.style.display = "none";
+      return;
+    }
+
+    // Check each category: show all its items if the category name matches,
+    // otherwise show only items that match individually
+    categoryDivs.forEach((categoryDiv) => {
+      const categoryName = categoryDiv.textContent.toLowerCase();
+      const categoryMatches = categoryName.includes(trimmed);
+
+      let sibling    = categoryDiv.nextElementSibling;
+      let hasVisible = false;
+
+      while (sibling && !sibling.classList.contains("modal-category")) {
+        if (sibling.classList.contains("modal-menu-item")) {
+          if (categoryMatches) {
+            // Whole category matched — show all items under it
+            sibling.style.display = "";
+            hasVisible = true;
+          } else {
+            // Check individual item fields
+            const name  = sibling.querySelector(".modal-dish-name")?.textContent.toLowerCase()  || "";
+            const desc  = sibling.querySelector(".modal-dish-desc")?.textContent.toLowerCase()  || "";
+            const tags  = sibling.querySelector(".modal-dish-tags")?.textContent.toLowerCase()  || "";
+            const price = sibling.querySelector(".modal-dish-price")?.textContent.toLowerCase() || "";
+
+            const itemMatches =
+              name.includes(trimmed)  ||
+              desc.includes(trimmed)  ||
+              tags.includes(trimmed)  ||
+              price.includes(trimmed);
+
+            sibling.style.display = itemMatches ? "" : "none";
+            if (itemMatches) hasVisible = true;
+          }
+        }
+        sibling = sibling.nextElementSibling;
+      }
+
+      // Show/hide the category header itself
+      categoryDiv.style.display = hasVisible ? "" : "none";
+    });
+
+    const anyVisible = [...menuItems].some((item) => item.style.display !== "none");
+    noResults.style.display = !anyVisible ? "block" : "none";
+  }
+
+  function triggerSearch() {
+    if (searchInput.value.trim() !== "" && bsModal) bsModal.show();
+    performSearch(searchInput.value);
+  }
+
+  // ── Click on Search button only ──
+  searchForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    triggerSearch();
+  });
+
+  // ── Enter key ──
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      triggerSearch();
+    }
+  });
+
+  // ── Native clear button (×) resets results ──
+  searchInput.addEventListener("search", (e) => {
+    if (e.target.value === "") performSearch("");
+  });
+
+  // ── Reset scroll when modal opens manually ──
+  modalEl?.addEventListener("show.bs.modal", () => {
+    if (searchInput.value.trim() === "") performSearch("");
+    const body = modalEl.querySelector(".modal-body");
+    if (body) body.scrollTop = 0;
+  });
+
+  // ── Clear input when modal is closed ──
+  modalEl?.addEventListener("hidden.bs.modal", () => {
+    searchInput.value = "";
+    performSearch("");
+  });
+}
+
 /* ─── Animate main menu items on scroll (Intersection Observer) ─── */
 function initScrollReveal() {
   const items = document.querySelectorAll(".menu-item");
@@ -243,41 +311,72 @@ function initScrollReveal() {
   });
 }
 
-/* ─── Reset modal scroll position when opened ─── */
-function initModalScrollReset() {
-  const modal = document.getElementById("fullMenuModal");
-  if (!modal) return;
-  modal.addEventListener("show.bs.modal", () => {
-    const body = modal.querySelector(".modal-body");
-    if (body) body.scrollTop = 0;
+/* ─── Back to top button ─── */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", () => {
+    backToTopBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+  });
+
+  backToTopBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
-/* ─── Init ─── */
+/* ─── Single Init ─── */
 document.addEventListener("DOMContentLoaded", () => {
   buildModal();
+  initSearch();       // ← search runs after modal is built
   initScrollReveal();
-  initModalScrollReset();
+  initBackToTop();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
+/* ***Language Selection DropDown*** */
+function setLang(lang) {
+  localStorage.setItem("lang", lang);
 
-  // Show or hide the button based on scroll position
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 400) {
-      backToTopBtn.style.display = "flex";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translation[lang][key] || "";
   });
 
-  // Smoothly scroll to the top when clicked
-  backToTopBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
+  /* hide dropdown after selection */
+  document.getElementById("langMenu").classList.remove("show");
+}
+
+/* *** Toggle DropDown *** */
+function toggleLangMenu() {
+  document.getElementById("langMenu").classList.toggle("show");
+}
+
+/* *** Close when clicking outside *** */
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("langMenu");
+  const button = document.querySelector(".lang-dropdown button");
+
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("show");
+  }
 });
+
+/* *** Load saved language *** */
+window.addEventListener("load", () => {
+  setLang(localStorage.getItem("lang") || "en");
+});
+
+/* *** Translation *** */
+const translation = {
+  en: {},
+
+  fr: {},
+
+  it: {},
+};
+
+
+
+
+
