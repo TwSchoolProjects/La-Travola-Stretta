@@ -374,6 +374,65 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* *** Account & login *** */
+
+function signup() {
+  const username = document.getElementById("signup-username");
+  const password = document.getElementById("signup-password");
+  const message = document.getElementById("message");
+
+  if (!username || !password) return;
+
+  if (!username.value || !password.value) {
+    message.style.color = "red";
+    message.innerText = "Fill all fields";
+    return;
+  }
+
+  const user = {
+    username: username.value,
+    password: password.value,
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
+
+  message.style.color = "green";
+  message.innerText = "Account created!";
+}
+
+function login() {
+  const username = document.getElementById("login-username");
+  const password = document.getElementById("login-password");
+  const message = document.getElementById("message");
+
+  const savedUser = JSON.parse(localStorage.getItem("user"));
+
+  if (!savedUser) {
+    message.style.color = "red";
+    message.innerText = "No account found. Please sign up first.";
+    return;
+  }
+
+  if (
+    username.value === savedUser.username &&
+    password.value === savedUser.password
+  ) {
+    message.style.color = "green";
+    message.innerText = "Login successful!";
+  } else {
+    message.style.color = "red";
+    message.innerText = "Wrong username or password";
+  }
+}
+
+/* ✅ THIS MUST BE OUTSIDE login() */
+function togglePassword(id) {
+  const input = document.getElementById(id);
+  if (!input) return;
+
+  input.type = input.type === "password" ? "text" : "password";
+}
+
 
 /* ***Language Selection DropDown*** */
 function setLang(lang) {
