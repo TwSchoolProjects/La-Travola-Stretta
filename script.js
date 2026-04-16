@@ -425,7 +425,7 @@ function login() {
   }
 }
 
-/* ✅ THIS MUST BE OUTSIDE login() */
+
 function togglePassword(id) {
   const input = document.getElementById(id);
   if (!input) return;
