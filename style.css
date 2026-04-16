@@ -36,7 +36,7 @@
 
   /* themeable navbar tokens */
   --nav-bg: #212529; /* bootstrap bg-dark */
-  --nav-text: #f8f9fa;
+  --nav-text: var(--gold-muted-metallic)
 }
 
 
@@ -100,6 +100,7 @@ h2,
 .pill,
 .menu-card__title {
   font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
+  color: var(--gold-muted-metallic);
   letter-spacing: 0.02em;
 }
 
@@ -140,7 +141,7 @@ body.light-mode {
 
   /* Navbar (keep layout; just recolor) */
   --nav-bg: #2B2B2B;
-  --nav-text: #F3E7D3;
+  --nav-text: var(--gold-muted-metallic)
 }
 
 img {
