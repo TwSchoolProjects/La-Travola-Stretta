@@ -5,9 +5,10 @@
    ============================================================ */
 
 :root {
-  --gold: #18c535;
-  --gold-light: #bba33a;
   --cream: #dfc790;
+  --gold-light: #bba33a;
+  --gold-muted-metallic: #b5a05b;
+  --green-bright: #18c535;
   --bg: #141414;
   --bg-card: #1b1b1b;
   --bg-modal: #161616;
@@ -15,6 +16,7 @@
   --divider: rgba(201, 168, 76, 0.18);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-ui: "Josefin Sans", sans-serif;
+  --font-serif: "Cinzel", Georgia, "Times New Roman";
   --img-size: 160px;
   --img-radius: 22px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -45,17 +47,22 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: var(--font-serif);
 }
 
 /* ─── **** Base **** ─── */
 body {
+  scroll-behavior: smooth;
+  padding-top: 90px;
   background-color: #1C1C1C;
   color: #E0D4BE;
   font-family: var(--font-ui);
   font-weight: 300;
   min-height: 100vh;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
+  line-height: 1.55;
 }
 
 img {
@@ -70,8 +77,34 @@ a {
 }
 
 section {
-  padding: 20px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin: 0;
+}
+
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+h1,
+h2,
+.brand,
+.kicker,
+.pill,
+.menu-card__title {
+  font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
+  color: var(--gold-muted-metallic);
+  letter-spacing: 0.02em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.1;
 }
 
 p {
@@ -89,7 +122,12 @@ p {
   sans-serif;
 }
 
-/* ─── *** Top Bar***  ─── */
+.card {
+  border-radius: 10px;
+}
+/* ================================
+              TOP BAR 
+================================ */
 .top-bar {
   background: #1C1C1C;
   color: #E0D4BE;
@@ -245,6 +283,46 @@ p {
   white-space: nowrap;
 }
 
+/* ================================
+              NAVBAR
+================================ */
+.navbar-brand span {
+    color: var(--gold-muted-metallic); 
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-nav .nav-link {
+    color: var(--gold-muted-metallic) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #A17F4F !important;
+}
+
+.form-control[type="search"] {
+    background-color: #E0D4BE !important; 
+}
+
+.form-control[type="search"]:focus {
+    background-color: #ffffff !important;  
+}
+
+/* Reserve a table button */
+.header__actions .btn-success {
+  background-color: #1A4F2F !important; 
+  border-color: #1A4F2F !important;    
+  color: #A17F4F;
+}
+
+/* Reserve a table button - hover*/
+/* Submit button - hover*/
+.header__actions .btn-success:hover,
+.btn-outline-success:hover {
+    background-color:  #D4AF37!important;
+    color: #073312 !important;          
+}
 
 /* ================================
               HERO 
@@ -793,7 +871,9 @@ p {
   right: -150px;
 }
 
-/* ─── **** Header **** ─── */
+/*-----------------------------------*\
+          MENU HEADER
+\*----------------------------------- */
 .menu-header {
   position: relative;
   z-index: 1;
@@ -829,7 +909,9 @@ p {
   letter-spacing: 0.4em;
 }
 
-/* ─── **** Menu Section ****  ─── */
+/*-----------------------------------*\
+          MENU 
+\*----------------------------------- */
 
 /* ─── Main menu container ─── */
 .menu-container {
@@ -1218,65 +1300,10 @@ p {
   backdrop-filter: blur(6px);
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
-}
 
-body {
-  scroll-behavior: smooth;
-  padding-top: 90px;
-  font-family:
-    "Source Sans 3",
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Arial,
-    sans-serif;
-  line-height: 1.55;
-}
-
-html {
-  scroll-padding-top: 80px;
-}
-
-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-h1,
-h2,
-.brand,
-.kicker,
-.pill,
-.menu-card__title {
-  font-family: "Cinzel", Georgia, "Times New Roman", Times, serif;
-  letter-spacing: 0.02em;
-}
-
-h2 {
-  margin: 14px 0 10px;
-  font-size: clamp(28px, 3.2vw, 42px);
-  line-height: 1.1;
-}
-
-/* img {
-  max-width: 100%;
-  display: block;
-} */
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.card {
-  border-radius: 10px;
-}
-
-/* --- Contact cards --- */
+/*-----------------------------------*\
+          CONTACT US
+\*----------------------------------- */
 .contact__cards {
   margin-top: 3px;
   display: grid;
@@ -1292,10 +1319,19 @@ a {
   display: grid;
   gap: 4px;
   border: 1px solid var(--hair);
-  background: black;
-  color: whitesmoke;
+  background: rgb(53, 16, 16);
+  color: #E0D4BE;
   padding: 10px;
 }
+
+.contact-card__title {
+  font-size: 0.9rem;
+  color: var(--gold-light);
+}
+
+/*-----------------------------------*\
+          BACK TO TOP BUTTON
+\*----------------------------------- */
 
 #backToTop {
   position: fixed;
@@ -1316,11 +1352,6 @@ a {
   transform: scale(1.1);
   background-color: #157347;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
 
 /*-----------------------------------*\
           RESERVATION
@@ -1530,7 +1561,6 @@ textarea.input-field {
   }
 
 }
-
 
 #visual-lineSeperator {
   width: 100%;

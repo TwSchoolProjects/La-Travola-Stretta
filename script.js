@@ -1,7 +1,7 @@
 /* ============================================================
    La Tavola Stretta
    FE-GR4-Restaurant Website Project
-    script.js
+   script.js
    ============================================================ */
 
 const FULL_MENU = [
@@ -44,7 +44,7 @@ const FULL_MENU = [
       {
         name: "Polpo Arrosto al Lomone",
         desc: "A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char, served on a bed of creamy mashed potatoes, finished with lemon, olive oil, and fresh herbs.",
-        price: "$26.00",
+        price: "$36.00",
         tags: ["Seafood", "Award-winning", "Signature"],
         img: "./Images/award winning dish.jpg",
       },
