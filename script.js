@@ -112,7 +112,7 @@ const FULL_MENU = [
         desc: "750ml bottle of sparkling mineral water.",
         price: "$7.50",
         tags: ["Non-Alcoholic"],
-        img: "./Images/SanPellegrino.jpg",
+        img: "./Images/SanPellegrino.png",
       },
       {
         name: "Glass of Chianti Classico",
