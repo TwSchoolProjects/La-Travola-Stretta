@@ -1,2 +1,2 @@
-# La-Tavola-Stretta
-Restaurant FrontEnd Team Project
+<!-- # La-Tavola-Stretta
+Restaurant FrontEnd Team Project -->

@@ -22,7 +22,7 @@
             **** Top bar Design ****
     /****************************************/ -->
     <header class="top-bar">
-      <div class="container">
+      <div class="container-topBar">
         <!-- LEFT -->
         <div class="topbar-left">
           <a href="http://maps.google.com/?q=123+Street+Montreal+h4p1k2">1248 Rue Duluth Est, Montréal, QC H2L 1B0</a>
@@ -43,9 +43,9 @@
             </button>
 
             <div id="langMenu" class="hidden">
-              <img src="/Icons/united_states_of_america_round_icon_64.png" alt="English" onclick="setLang('EN')"/>
-              <img src="/Icons/canada_round_icon_64.png" alt="French" onclick="setLang('FR')"/>
-              <img src="/Icons/italy_round_icon_64.png" alt="Italian" onclick="setLang('IT')"/>
+              <img src="Icons/united_states_of_america_round_icon_64.png" alt="English" onclick="setLang('EN')"/>
+              <img src="Icons/canada_round_icon_64.png" alt="French" onclick="setLang('FR')"/>
+              <img src="Icons/italy_round_icon_64.png" alt="Italian" onclick="setLang('IT')"/>
             </div>
           </div>
 
@@ -58,15 +58,21 @@
 
           <!-- Light/Dark Mode Toggle -->
           <button id="light-dark-mode">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 17.01c2.76 0 5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12s2.25 5.01 5.01 5.01M12 9c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01-3.01-1.35-3.01-3.01S10.34 9 12 9m1 10h-2v3h2zm0-17h-2v3h2zM2 11h3v2H2zm17 0h3v2h-3zM4.22 18.36l.71.71.71.71 1.06-1.06 1.06-1.06-.71-.71-.71-.71-1.06 1.06zM19.78 5.64l-.71-.71-.71-.71-1.06 1.06-1.06 1.06.71.71.71.71 1.06-1.06zm-12.02.7L6.7 5.28 5.64 4.22l-.71.71-.71.71L5.28 6.7l1.06 1.06.71-.71zm8.48 11.32 1.06 1.06 1.06 1.06.71-.71.71-.71-1.06-1.06-1.06-1.06-.71.71z"
-              ></path>
+
+            <!-- moon (dark mode icon) -->
+            <svg id="icon-dark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+            <path d="M20.71 13.51c-.78.23-1.58.35-2.38.35-4.52 0-8.2-3.68-8.2-8.2 0-.8.12-1.6.35-2.38.11-.35.01-.74-.25-1s-.64-.36-1-.25A10.17 10.17 0 0 0 2 11.8C2 17.42 6.57 22 12.2 22c4.53 0 8.45-2.91 9.76-7.24.11-.35.01-.74-.25-1s-.64-.36-1-.25M12.2 20C7.68 20 4 16.32 4 11.8a8.15 8.15 0 0 1 4.18-7.15c-.03.34-.05.68-.05 1.02 0 5.62 4.57 10.2 10.2 10.2.34 0 .68-.02 1.02-.05C17.93 18.38 15.23 20 12.2 20M16 8l.94-2.06L19 5l-2.06-.94L16 2l-.94 2.06L13 5l2.06.94zm4.25-.5-.55 1.2-1.2.55 1.2.55.55 1.2.55-1.2 1.2-.55-1.2-.55z"></path>
             </svg>
+
+            <!-- sun (light mode icon) -->
+            <svg id="icon-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+            <path d="M6.99 12c0 2.76 2.25 5.01 5.01 5.01s5.01-2.25 5.01-5.01S14.76 6.99 12 6.99 6.99 9.24 6.99 12M12 8.99c1.66 0 3.01 1.35 3.01 3.01s-1.35 3.01-3.01 3.01S8.99 13.66 8.99 12 10.34 8.99 12 8.99M13 19h-2v2h2zM11 5h2V3h-2zm-8 6h2v2H3zm16 0h2v2h-2zM4.93 17.66l.71.7.7.71.71-.71.71-.7-.71-.71-.71-.71-.7.71zM17.66 4.93l-.71.71-.71.7.71.71.71.71.7-.71.71-.71-.71-.7zM4.93 6.34l.71.71.7.71.71-.71.71-.71-.71-.7-.71-.71-.7.71zm12.73 12.73.7-.71.71-.7-.71-.71-.7-.71-.71.71-.71.71.71.7z"></path>
+            </svg>
+
           </button>
 
           <!-- Opening Hours -->
-          <span>Tue-Sun   11am-11pm</span>
+          <span data-i18n="top_hours">Tue-Sun   11am-11pm</span>
         </div>
       </div>
 
@@ -81,7 +87,7 @@
         <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="#">
             <img
-              src="/Images/Logo.png"
+              src="Images/Logo.png"
               alt="La Tavola Stretta Logo"
               width="60"
               height="auto"
@@ -105,19 +111,19 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#" data-i18n="nav_home">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#menu">Menu</a>
+                <a class="nav-link" href="#menu" data-i18n="nav_menu">Menu</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#reservation">Reservations</a>
+                <a class="nav-link" href="#reservation" data-i18n="nav_reservations">Reservations</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link me-3" href="#contact">Contact Us</a>
+                <a class="nav-link me-3" href="#contact" data-i18n="nav_contact">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -126,16 +132,16 @@
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search the menu..."
+              placeholder="Search the menu..." data-i18n-placeholder="search_placeholder"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success me-2" type="submit">
+            <button class="btn btn-outline-success me-2" type="submit" data-i18n="search_btn">
               Search
             </button>
           </form>
 
           <div class="header__actions hide-md">
-            <a class="btn btn-success" href="#reservation">Reserve a Table</a>
+            <a class="btn btn-success" href="#reservation" data-i18n="reserve_table">Reserve a Table</a>
           </div>
         </div>
       </nav>
@@ -148,13 +154,13 @@
               **** Hero Design ****
     /****************************************/ -->
     <section class="hero">
-      <div class="container text-center">
+      <div class="container-hero text-center">
         
         <div class="row align-items-center">
 
           <!-- LEFT (Image) -->
           <div class="col align-self-center">
-            <img src="/Images/Bruschetta 2.jpg" class="hero-img" alt="Right-Main-Image">
+            <img src="Images/Bruschetta 2.jpg" class="hero-img" alt="Right-Main-Image">
           </div>
 
           <!-- CENTER (Text) -->
@@ -162,17 +168,17 @@
 
             <div class="description">
               <p>
-                La Tavola Stretta is a small, modern Italian restaurant offering an intimate fine-dining experience.
+                <span data-i18n="hero_desc">La Tavola Stretta is a small, modern Italian restaurant offering an intimate fine-dining experience.</span>
               </p>  
             </div>
 
             <div class="happyhour">
-              <h2>5 à 7 Happy Hour!</h2>
+              <h2 data-i18n="happyhour_title">5 - 7 Happy Hour!</h2>
               <br>
-              <p>Join us from 5 - 7 PM for drinks and Italian bites in a cozy modern setting.</p>
+              <p><span data-i18n="happyhour_desc">Join us from 5 - 7 PM for drinks and Italian bites in a cozy modern setting.</span></p>
             </div>
 
-            <button class="btn btn-warning">Book Now</button>
+            <button class="btn btn-warning" data-i18n="book_now">Book Now</button>
 
           </div>
 
@@ -185,34 +191,33 @@
                 <p class="animate__animated animate__fadeInTopRight animate__delay-3s">Stretta</p>
               </div>
               <br>
-              <h5>Where Every Seat Tells A Story</h5>
+              <h5 data-i18n="hero_tagline">Where Every Seat Tells A Story</h5>
             </div>
           </div>
 
         </div>
       </div>
     </section>
-<svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>    
+      <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>    
 
 <!-- /****************************************/
         **** About Us section ****
     /****************************************/ -->
-    
     <section class="aboutUs">
       <div class="container">
         <!-- ABOUT US -->
-        <div class="aboutUs-content d-flex align-items-center gap-4 mb-5">
+        <div class="aboutUs-content  mb-5">
 
-          <img class="about-img img-fluid rounded" src="/Images/about us image.jpg" alt="aboutUsImage">
+          <img class="about-img img-fluid rounded" src="Images/about us image.jpg" alt="aboutUsImage">
 
           <div class="about-text">
-            <h1>About Us</h1>
+            <h1 data-i18n="about_title">About Us</h1>
             <p>
-              La Tavola Stretta is an intimate, modern Italian restaurant focused on authentic flavors and quality ingredients.
-              Led by Chef Leonardo, we create a warm, elegant dining experience where every meal brings people together.
+              <span data-i18n="about_text">La Tavola Stretta is an intimate, modern Italian restaurant focused on authentic flavors and quality ingredients.
+              Led by Chef Leonardo, we create a warm, elegant dining experience where every meal brings people together.</span>
             </p>
           </div>
-          <img class="about-logo" src="/Images/Logo.png" alt="logo">
+          <img class="about-logo" src="Images/Logo.png" alt="logo">
         </div>
 
         <!-- OUR STORY -->
@@ -220,25 +225,25 @@
           <div class="row align-items-center g-4">
 
             <div class="col-md-6">
-              <img src="/Images/our story image.jpg" class="img-fluid rounded" alt="ourStoryImage">
+              <img src="Images/our story image.jpg" class="img-fluid rounded" alt="ourStoryImage">
             </div>
 
             <div class="col-md-6">
-              <h1>Our Story</h1>
+              <h1 data-i18n="story_title">Our Story</h1>
 
               <p>
-                La Tavola Stretta was born from a simple idea: bringing people closer together through authentic Italian food.
-                After years of working in renowned kitchens across Italy, Chef Leonardo dreamed of opening a space that felt intimate, elegant, and true to his roots.
+                <span data-i18n="story_p1">La Tavola Stretta was born from a simple idea: bringing people closer together through authentic Italian food.
+                After years of working in renowned kitchens across Italy, Chef Leonardo dreamed of opening a space that felt intimate, elegant, and true to his roots.</span>
               </p>
 
               <span id="dots">...</span>
 
               <span id="more">
-                He brought together a small team of chefs he trusted—Maria, Angelo, and Donaldo—each sharing the same passion for tradition and quality.
-                Together, they created a restaurant where every detail matters.
+                <span data-i18n="story_more">He brought together a small team of chefs he trusted—Maria, Angelo, and Donaldo—each sharing the same passion for tradition and quality.
+                Together, they created a restaurant where every detail matters.</span>
               </span>
 
-              <button onclick="toggleText()" id="readMoreBtn">Read More...</button>
+              <button onclick="toggleText()" id="readMoreBtn" class="read-more-btn mt-3" data-i18n="read_more">Read More...</button>
             </div>
 
           </div>
@@ -250,14 +255,14 @@
                 <div class="cs-content">
                     <p class="cs-review">
                       <span class="cs-author">Chef Leonardo</span>
-                        “Born and trained in Florence, Leonardo brings over 20 years of experience in refined Italian cuisine. His passion for authentic flavors and modern presentation led him to La Tavola Stretta, where he crafts a menu that blends tradition with innovation in an intimate dining experience.”
+                        <span data-i18n="chef_quote">“Born and trained in Florence, Leonardo brings over 20 years of experience in refined Italian cuisine. His passion for authentic flavors and modern presentation led him to La Tavola Stretta, where he crafts a menu that blends tradition with innovation in an intimate dining experience.”</span>
                     </p>
                 </div>
 
                 <picture class="cs-picture">
                     <img loading="lazy"
                         decoding="async"
-                        src="/Images/chef image.jpg"
+                        src="Images/chef image.jpg"
                         alt="Chef Leonardo"
                         width="328"
                         height="540"
@@ -270,9 +275,9 @@
 
                 <!-- SECTION TEXT -->
                 <div class="cs-content">
-                  <img class="cs-graphic" src="/Images/team image.jpg" alt="The Team">
-                  <h2 class="cs-title">The Team</h2>
-                  <p class="cs-text">
+                  <img class="cs-graphic" src="Images/team image.jpg" alt="The Team">
+                  <h2 class="cs-title" data-i18n="team_title">The Team</h2>
+                  <p class="cs-text" data-i18n="team_text">
                     Our team at La Tavola Stretta is made up of passionate chefs dedicated to authentic Italian cuisine.
                     With experience across Italy, they bring tradition, creativity, and care to every dish.
                   </p>
@@ -285,41 +290,41 @@
               <!-- STAFF 1 -->
               <li class="cs-item">
                 <picture class="cs-picture">
-                  <img src="/Images/staff2.jpg" alt="Maria - Head Chef">
+                  <img src="Images/staff2.jpg" alt="Maria - Head Chef">
                 </picture>
 
                 <div class="cs-info">
                   <span class="cs-name">Maria</span>
-                  <span class="cs-job">Head Chef</span>
+                  <span class="cs-job" data-i18n="job_head_chef">Head Chef</span>
 
-                  <p class="cs-text">Trained in Milan with years of fine-dining experience, Maria leads the kitchen with creativity and precision.</p>
+                  <p class="cs-text"><span data-i18n="staff_maria_desc">Trained in Milan with years of fine-dining experience, Maria leads the kitchen with creativity and precision.</span></p>
                 </div>
               </li>
 
               <!-- STAFF 2 -->
               <li class="cs-item">
                 <picture class="cs-picture">
-                  <img src="/Images/staff1.jpg" alt="Angelo">
+                  <img src="Images/staff1.jpg" alt="Angelo">
                 </picture>
 
                 <div class="cs-info">
                   <span class="cs-name">Angelo</span>
-                  <span class="cs-job">Chef</span>
-                  <p class="cs-text"> With years of experience in Rome, Angelo brings deep knowledge of classic Italian cuisine and rich flavors.</p>
+                  <span class="cs-job" data-i18n="job_chef">Chef</span>
+                  <p class="cs-text" data-i18n="staff_angelo_desc"> With years of experience in Rome, Angelo brings deep knowledge of classic Italian cuisine and rich flavors.</p>
                 </div>
               </li>
 
               <!-- STAFF 3 -->
               <li class="cs-item">
                 <picture class="cs-picture">
-                  <img src="/Images/staff3.jpg" alt="Donaldo">
+                  <img src="Images/staff3.jpg" alt="Donaldo">
                 </picture>
 
                 <div class="cs-info">
                   <span class="cs-name">Donaldo</span>
                   <span class="cs-job">Chef</span>
 
-                  <p class="cs-text">Specializes in fresh coastal dishes and adds a bold, vibrant touch to the team's creations.</p>
+                  <p class="cs-text"><span data-i18n="staff_donaldo_desc">Specializes in fresh coastal dishes and adds a bold, vibrant touch to the team's creations.</span></p>
                 </div>
               </li>
             </ul>
@@ -328,20 +333,21 @@
         </div>
          </div>
     </section>
-<svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+    <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
 <!-- /****************************************/
           **** Award Dish ection ****
     /****************************************/ -->
     <section class="awardDish py-5">
       <div class="container text-center">
 
-        <h1 class="mb-4">Award Winning Dish</h1>
+        <h1 class="mb-4" data-i18n="award_title">Award Winning Dish</h1>
 
         <div class="row justify-content-center align-items-center">
 
           <!-- Image -->
           <div class="col-md-6">
-            <img src="/Images/award winning dish.jpg" class="  awardDish-img" alt="winning dish">
+            <img src="Images/award winning dish.jpg" class="  awardDish-img" alt="winning dish">
           </div>
 
           <!-- Text -->
@@ -350,10 +356,10 @@
             <h2>Polpo Arrosto al Lomone</h2>
 
             <p>
-              A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char,
+              <span data-i18n="award_desc">A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char,
               served on a bed of creamy mashed potatoes, finished with lemon, olive oil,
               and fresh herbs. A refined, award-winning dish celebrating bold coastal
-              Italian flavors.
+              Italian flavors.</span>
             </p>
 
           </div>
@@ -361,15 +367,15 @@
         </div>
       </div>
     </section>
-<svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+      <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
 <!-- /****************************************/
             **** Menu Section ****
     /****************************************/ -->      
-    
     <section id="menu" class="py-5">
         <div class="container">
           <div class="contact-header mb-5">
-            <h2>Menu</h2>
+            <h2 data-i18n="menu_title">Menu</h2>
           </div>
           <!--  **** DECORATIVE BLOBS ****  -->
           <div class="bg-blob blob-1"></div>
@@ -377,14 +383,14 @@
 
           <!--  **** FEATURED ITEMS ****  -->
           <main class="container menu-container pb-5">
-            <div class="category-label">— Featured Dishes —</div>
+            <div class="category-label" data-i18n="featured_dishes">— Featured Dishes —</div>
 
             <!-- Item 1 -->
             <div class="menu-item row align-items-center g-0">
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Images/Calamari.jpg"
+                    src="Images/Calamari.jpg"
                     alt="Calamari Fritti"
                     class="dish-img"
                   />
@@ -397,11 +403,10 @@
                   <span class="dish-price">$19.00</span>
                 </div>
                 <p class="dish-desc">
-                  Crispy saffron rice balls stuffed with mozzarella and peas,
-                  served over a bed of pomodoro sauce.
+                  <span data-i18n="featured_calamari_desc">Lightly floured calamari rings served with spicy marinara and lemon wedges.</span>
                 </p>
                 <div class="dish-tags">
-                  <span class="tag">Seafood</span>
+                  <span class="tag" data-i18n="tag_seafood">Seafood</span>
                 </div>
               </div>
             </div>
@@ -413,7 +418,7 @@
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Images/Salmone al Limone.jpg"
+                    src="Images/Salmone al Limone.jpg"
                     alt="Salmone al Limone "
                     class="dish-img"
                   />
@@ -426,12 +431,11 @@
                   <span class="dish-price">$36.00</span>
                 </div>
                 <p class="dish-desc">
-                  Pan-seared Atlantic salmon with a lemon-caper butter sauce,
-                  served with seasonal roasted vegetables.
+                  <span data-i18n="featured_salmon_desc">Pan-seared Atlantic salmon with a lemon-caper butter sauce, served with seasonal roasted vegetables.</span>
                 </p>
                 <div class="dish-tags">
                   <span class="tag">Seafood</span>
-                  <span class="tag">Signature Dish</span>
+                  <span class="tag" data-i18n="tag_signature">Signature Dish</span>
                 </div>
               </div>
             </div>
@@ -443,7 +447,7 @@
               <div class="col-auto">
                 <div class="dish-img-wrap">
                   <img
-                    src="/Images/cannoli.png"
+                    src="Images/cannoli.png"
                     alt="Sicilian Cannoli "
                     class="dish-img"
                   />
@@ -456,11 +460,10 @@
                   <span class="dish-price">$10.00</span>
                 </div>
                 <p class="dish-desc">
-                  Crispy pastry shells filled with sweet ricotta and chocolate
-                  chips, finished with crushed pistachios.
+                  <span data-i18n="featured_cannoli_desc">Crispy pastry shells filled with sweet ricotta and chocolate chips, finished with crushed pistachios.</span>
                 </p>
                 <div class="dish-tags">
-                  <span class="tag">Chef's Pick</span>
+                  <span class="tag" data-i18n="tag_chefs_pick">Chef's Pick</span>
                 </div>
               </div>
             </div>
@@ -470,11 +473,11 @@
               class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3"
             >
               <button
-                class="btn-view-menu"
+                class="btn-view-menu" data-i18n="view_full_menu"
                 data-bs-toggle="modal"
                 data-bs-target="#fullMenuModal"
               >
-                View Full Menu &nbsp;<i
+                <span data-i18n="view_full_menu">View Full Menu</span> &nbsp;<i
                   class="bi bi-arrow-right-short fs-5"
                 ></i>
               </button>
@@ -486,7 +489,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <i class="bi bi-file-earmark-pdf me-1"></i> View PDF
+                <i class="bi bi-file-earmark-pdf me-1"></i> <span data-i18n="view_pdf">View PDF</span>
               </a>
             </div>
           </main>
@@ -510,7 +513,7 @@
                       class="modal-title modal-restaurant-name"
                       id="fullMenuLabel"
                     >
-                      La Tavola Stretta — Full Menu
+                      <span data-i18n="modal_full_menu_title">La Tavola Stretta — Full Menu</span>
                     </h5>
                   </div>
                   <button
@@ -528,41 +531,41 @@
                 <div class="modal-footer menu-modal-footer">
                   <p class="footer-note mb-0">
                     <i class="bi bi-info-circle me-1"></i>
-                    Ask your server about allergens &amp; daily specials.
+                    <span data-i18n="modal_footer_note">Ask your server about allergens &amp; daily specials.</span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-  <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+    </section>
+      <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
 <!-- /****************************************/
             **** Reservation Section ****
     /****************************************/ -->
       <section id="reservation" class="py-5">
         <div class="container">
-          <h1>Reservation</h1>
-          <!-- Left Main image -->
-          <img src="/Images/5-7 main pic.jpg" alt="" />
+          <h1 data-i18n="reservation_title">Reservation</h1>
+            <div class="row align-items-center justify-content-center">
 
             <!-- LEFT (Image) -->
             <div class="col-md-5">
-              <img src="/Images/5-7 main pic.jpg" alt="" class="img-fluid">
+              <img src="Images/5-7 main pic.jpg" alt="" class="img-fluid">
             </div>
 
             <!-- RIGHT (Form) -->
             <div class="col-md-7">
               <form action="" class="form-right">
-                <h2 class="headline-1">Online Reservation</h2>
+                <h2 class="headline-1" data-i18n="online_reservation">Online Reservation</h2>
 
                 <!-- Name + Phone -->
                 <div class="row">
                   <div class="col-sm-6">
-                    <input type="text" name="name" placeholder="Your Name" class="input-field w-100"/>
+                    <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="your_name" class="input-field w-100"/>
                   </div>
                   <div class="col-sm-6">
-                    <input type="tel" name="phone" placeholder="Phone Number" class="input-field w-100"/>
+                    <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="phone_number" class="input-field w-100"/>
                   </div>
                 </div>
 
@@ -570,16 +573,16 @@
                 <div class="row mt-3">
                   <div class="col-sm-4">
                     <select name="Party Size" class="input-field w-100">
-                      <option>1 Person</option>
-                      <option>2 People</option>
-                      <option>3 People</option>
-                      <option>4 People</option>
-                      <option>5 People</option>
-                      <option>6 People</option>
-                      <option>7 People</option>
-                      <option>8 People</option>
-                      <option>9 People</option>
-                      <option>10 People</option>
+                      <option data-i18n="party_1">1 Person</option>
+                      <option data-i18n="party_2">2 People</option>
+                      <option data-i18n="party_3">3 People</option>
+                      <option data-i18n="party_4">4 People</option>
+                      <option data-i18n="party_5">5 People</option>
+                      <option data-i18n="party_6">6 People</option>
+                      <option data-i18n="party_7">7 People</option>
+                      <option data-i18n="party_8">8 People</option>
+                      <option data-i18n="party_9">9 People</option>
+                      <option data-i18n="party_10">10 People</option>
                     </select>
                   </div>
 
@@ -607,19 +610,19 @@
 
                 <!-- Message -->
                 <div class="mt-3">
-                  <textarea name="message" placeholder="Message" class="input-field w-100"></textarea>
+                  <textarea name="message" placeholder="Message" data-i18n-placeholder="message" class="input-field w-100"></textarea>
                 </div>
 
-                <!-- Button -->
-                <button type="submit" class="btn btn-secondary mt-3">
+                <!-- Button (JUST AN EXEMPLE, NOT REAL)-->
+                <a href="https://www.opentable.ca/booking/restref/availability?rid=1015486&lang=en-CA&color=1&r3uid=cfe&dark=false&correlationId=a3ce165f-4a8e-407b-9cd3-2032f25331c3&restRef=1015486&partySize=2&dateTime=2026-04-16T01%3A00&otSource=Restaurant%20website" target="_blank" type="submit" class="btn btn-secondary mt-3">
                   Book A Table
-                </button>
+                </a>
 
                 <!-- CONTACT INFO + SOCIALS -->
                 <div class="contact-box"> 
-                  <p>Email: info@restaurant.com</p>
-                  <p>Phone: <a href="tel:+15145550199">+1 (514) 555-0199</a></p>
-                  <p><a href="#contact">Contact Us</a></p>
+                  <p><span data-i18n="email_label">Email:</span> info@restaurant.com</p>
+                  <p><span data-i18n="phone_label">Phone:</span> <a href="tel:+15145550199">+1 (514) 555-0199</a></p>
+                  <p><a href="#contact" data-i18n="nav_contact">Contact Us</a></p>
 
                   <ul class="social-icons">
                     <li><a href="http://facebook.com" target="_blank"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" ><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"></path></svg></a></li>
@@ -634,7 +637,8 @@
           </div>
         </div>
       </section>
-  <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+        <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
 <!-- /****************************************/
             **** Testimonial Section ****
     /****************************************/ -->
@@ -642,7 +646,7 @@
           <div class="container">
 
             <h2 class="heading text-center mb-4">
-              Valuable <span>Testimonial</span>
+              <span data-i18n="testimonial_title"><span data-i18n="testimonial_value">Valuable</span> <span data-i18n="testimonial_word">Testimonial</span></span>
             </h2>
 
             <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -651,23 +655,23 @@
 
                 <!-- Slide 1 -->
                 <div class="carousel-item active text-center">
-                  <img src="/Images/testimonial 1.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <img src="Images/testimonial 1.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
                   <h3>Jackson Levi</h3>
-                  <p>“Absolutely amazing experience. The atmosphere is intimate and elegant, and every dish felt like a trip to Italy. The pasta was incredible — easily one of the best meals I've had in years.”</p>
+                  <p data-i18n="testi_text">“Absolutely amazing experience. The atmosphere is intimate and elegant, and every dish felt like a trip to Italy. The pasta was incredible — easily one of the best meals I've had in years.”</p>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="carousel-item text-center">
-                  <img src="/Images/testimonial 2.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <img src="Images/testimonial 2.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
                   <h3>Gloria Ocean</h3>
-                  <p>“La Tavola Stretta is a hidden gem. The food is authentic, beautifully presented, and full of flavor. The staff made us feel like family from the moment we walked in.”</p>
+                  <p data-i18n="testi_text2">“La Tavola Stretta is a hidden gem. The food is authentic, beautifully presented, and full of flavor. The staff made us feel like family from the moment we walked in.”</p>
                 </div>
 
                 <!-- Slide 3 -->
                 <div class="carousel-item text-center">
-                  <img src="/Images/testimonial 3.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
+                  <img src="Images/testimonial 3.jpg" class="rounded-circle mb-3 mx-auto d-block" width="250" height="250" alt="">
                   <h3>Julian Grayson</h3>
-                  <p>“Everything was perfect — from the cozy modern setting to the unforgettable tasting menu. You can truly feel the passion behind every plate. I'll definitely be coming back.”</p>
+                  <p data-i18n="testi_text3">“Everything was perfect — from the cozy modern setting to the unforgettable tasting menu. You can truly feel the passion behind every plate. I'll definitely be coming back.”</p>
                 </div>
 
               </div>
@@ -675,12 +679,12 @@
               <!-- Controls -->
               <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden" data-i18n="prev">Previous</span>
               </button>
 
               <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden" data-i18n="next">Next</span>
               </button>
 
             </div>
@@ -688,47 +692,49 @@
           </div>
         </div>
       </section>
-  <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+        <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
 <!-- /****************************************/
             **** Contact Us Section ****
     /****************************************/ -->
+
       <section id="contact" class="section py-5">
         <div class="container">
           <div class="contact-header mb-5">
-            <div class="kicker">CONTACT US</div>
-            <h2>Join us at the table </h2>
+            <div class="kicker" data-i18n="contact_kicker">CONTACT US</div>
+            <h2 data-i18n="contact_title">Join us at the table </h2>
           </div>
 
           <div class="row gx-5">
             <div class="col-md-4 mb-4 mb-md-0">
               <p class="muted">
-                Walk-ins are welcome when we can fit you in. Reservations are
-                recommended on weekends.
+                <span data-i18n="contact_intro">Walk-ins are welcome when we can fit you in. Reservations are
+                recommended on weekends.</span>
               </p>
 
               <div class="contact__cards mb-4">
                 <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">📍 Address</div>
+                  <div class="contact-card__title" data-i18n="address">📍 Address</div>
                   <div class="muted">1248 Rue Duluth Est, Montréal, QC H2L 1B0</div>
                 </div>
                 <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">☎ Phone</div>
+                  <div class="contact-card__title" data-i18n="phone">☎ Phone</div>
                   <div class="muted">(514) 555-0199</div>
                 </div>
                 <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">✉ Email</div>
+                  <div class="contact-card__title" data-i18n="email">✉ Email</div>
                   <div class="muted">reservations@latavolastretta.com</div>
                 </div>
                 <div class="contact-card rounded-3 mb-3">
-                  <div class="contact-card__title">⏱ Hours</div>
-                  <div class="muted">Tue–Sun &emsp; 11:00 AM–11:00 PM</div>
-                  <div class="muted">Mon &emsp;&emsp;&emsp; closed</div>
+                  <div class="contact-card__title" data-i18n="hours">⏱ Hours</div>
+                  <div class="muted"><span data-i18n="hours_tuesun">Tue–Sun &emsp; 11:00 AM–11:00 PM</span></div>
+                  <div class="muted" data-i18n="mon_closed">Mon &emsp;&emsp;&emsp; closed</div>
                 </div>
               </div>
 
               <div class="header__actions">
                 <a class="btn btn-success px-4 py-2" href="#reservation"
-                  >Reserve a Table</a
+                  ><span data-i18n="reserve_table">Reserve a Table</span></a
                 >
               </div>
             </div>
@@ -749,14 +755,46 @@
           </div>
         </div>
       </section>
-      <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
-    </main>
+        <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+        
+
+<!-- /****************************************/
+            **** Account Signup ****
+    /****************************************/ -->
+      <section class="account">
+        <div class="auth-container">
+          <h2 data-i18n="create_account">Create Account</h2>
+          <input type="text" id="signup-username" placeholder="Username" data-i18n-placeholder="username">
+          <div class="password-box">
+            <input type="password" id="signup-password" placeholder="Password" data-i18n-placeholder="password">
+            <span class="eye" onclick="togglePassword('signup-password')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" transform="scale(1,-1)"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"/><path d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5"/></svg>
+            </span>
+          </div>
+          <button onclick="signup()" data-i18n="sign_up">Sign Up</button>
+
+          <h2 data-i18n="login">Login</h2>
+          <input type="text" id="login-username" placeholder="Username">
+          <div class="password-box">
+            <input type="password" id="login-password" placeholder="Password">
+            <span class="eye" onclick="togglePassword('login-password')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" transform="scale(1,-1)"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"/><path d="M12 19c7.63 0 9.93-6.62 9.95-6.68.07-.21.07-.43 0-.63-.02-.07-2.32-6.68-9.95-6.68s-9.93 6.61-9.95 6.67c-.07.21-.07.43 0 .63.02.07 2.32 6.68 9.95 6.68Zm0-12c5.35 0 7.42 3.85 7.93 5-.5 1.16-2.58 5-7.93 5s-7.42-3.84-7.93-5c.5-1.16 2.58-5 7.93-5"/></svg>
+            </span>
+          </div>
+          <button onclick="login()" data-i18n="login">Login</button>
+
+          <p id="message"></p>
+        </div>
+        </section>
+          <svg id="visual" viewBox="0 0 1920 200" width="1920" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 136L40 124.8C80 113.7 160 91.3 240 92.2C320 93 400 117 480 132.7C560 148.3 640 155.7 720 149C800 142.3 880 121.7 960 106.8C1040 92 1120 83 1200 89C1280 95 1360 116 1440 114.3C1520 112.7 1600 88.3 1680 81.3C1760 74.3 1840 84.7 1880 89.8L1920 95" fill="none" stroke-linecap="round" stroke-linejoin="miter" stroke="#4F1A22" stroke-width="5"></path></svg>
+
+    </main> 
 
     <!--  **** FOOTER ****  -->
 
     <footer class="bg-dark text-white text-center py-4">
       <img
-        src="/Images/Logo.png"
+        src="Images/Logo.png"
         alt="La Tavola Stretta Logo"
         class="d-block mx-auto"
         width="80"
@@ -774,7 +812,7 @@
           ></a>
         </div>
         <p class="text-secondary mb-0 small">
-          &copy; 2026 La Tavola Stretta. All rights reserved.
+          <span data-i18n="footer_rights">&copy; 2026 La Tavola Stretta. All rights reserved.</span>
         </p>
       </div>
     </footer>
