@@ -1,7 +1,7 @@
 /* ============================================================
    La Tavola Stretta
    FE-GR4-Restaurant Website Project
-    script.js
+   script.js
    ============================================================ */
 
 const FULL_MENU = [
@@ -44,7 +44,7 @@ const FULL_MENU = [
       {
         name: "Polpo Arrosto al Lomone",
         desc: "A tender, slow-cooked octopus tentacle, lightly grilled for a perfect char, served on a bed of creamy mashed potatoes, finished with lemon, olive oil, and fresh herbs.",
-        price: "$26.00",
+        price: "$36.00",
         tags: ["Seafood", "Award-winning", "Signature"],
         img: "./Images/award winning dish.jpg",
       },
@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("light-dark-mode");
   if (!btn) return;
 
-  // DEFAULT = DARK (do nothing)
+  // *** DEFAULT = DARK 
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme === "light") {
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", () => {
     const isLight = document.body.classList.toggle("light-mode");
 
-    // Save correctly
+    
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
 });
@@ -380,16 +380,16 @@ function setLang(lang) {
   const dict = translation[lang] || translation.EN;
   localStorage.setItem("lang", lang);
 
-  // set <html lang>
+  // set <html lang> ****
   document.documentElement.setAttribute("lang", lang === "FR" ? "fr" : (lang === "IT" ? "it" : "en"));
 
-  // text nodes
+  // text nodes ****
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (dict[key] != null) el.innerHTML = dict[key];
   });
 
-  // placeholders
+  // placeholders ****
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
     if (dict[key] != null) el.setAttribute("placeholder", dict[key]);
@@ -398,7 +398,7 @@ function setLang(lang) {
   /* hide dropdown after selection */
   document.getElementById("langMenu")?.classList.remove("show");
 
-  // keep Read More button label in sync with current expanded/collapsed state
+ 
   const moreText = document.getElementById("more");
   const readBtn = document.getElementById("readMoreBtn");
   if (moreText && readBtn) {

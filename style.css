@@ -7,12 +7,17 @@
 :root {
   --gold-light: #bba33a;
   --cream: #dfc790;
+  --gold-light: #bba33a;
+  --gold-muted-metallic: #b5a05b;
+  --green-bright: #18c535;
+  --bg: #141414;
   --bg-card: #1b1b1b;
   --bg-modal: #161616;
   --text-muted: #8a8a8a;
   --divider: rgba(201, 168, 76, 0.18);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-ui: "Josefin Sans", sans-serif;
+  --font-serif: "Cinzel", Georgia, "Times New Roman";
   --img-size: 160px;
   --img-radius: 22px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -40,6 +45,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: var(--font-serif);
 }
 
 
@@ -54,6 +60,7 @@ body {
   font-weight: 300;
   min-height: 100vh;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   background: var(--bg);
   color: var(--text);
@@ -351,6 +358,46 @@ button {
   white-space: nowrap;
 }
 
+/* ================================
+              NAVBAR
+================================ */
+.navbar-brand span {
+    color: var(--gold-muted-metallic); 
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-nav .nav-link {
+    color: var(--gold-muted-metallic) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #A17F4F !important;
+}
+
+.form-control[type="search"] {
+    background-color: #E0D4BE !important; 
+}
+
+.form-control[type="search"]:focus {
+    background-color: #ffffff !important;  
+}
+
+/* Reserve a table button */
+.header__actions .btn-success {
+  background-color: #1A4F2F !important; 
+  border-color: #1A4F2F !important;    
+  color: #A17F4F;
+}
+
+/* Reserve a table button - hover*/
+/* Submit button - hover*/
+.header__actions .btn-success:hover,
+.btn-outline-success:hover {
+    background-color:  #D4AF37!important;
+    color: #073312 !important;          
+}
 
 /* ─── Navbar (theme-aware, layout unchanged) ─── */
 nav.navbar.fixed-top {
@@ -939,7 +986,9 @@ body.light-mode nav.navbar.fixed-top .navbar-toggler-icon {
   right: -150px;
 }
 
-/* ─── **** Header **** ─── */
+/*-----------------------------------*\
+          MENU HEADER
+\*----------------------------------- */
 .menu-header {
   position: relative;
   z-index: 1;
@@ -975,7 +1024,9 @@ body.light-mode nav.navbar.fixed-top .navbar-toggler-icon {
   letter-spacing: 0.4em;
 }
 
-/* ─── **** Menu Section ****  ─── */
+/*-----------------------------------*\
+          MENU 
+\*----------------------------------- */
 
 /* ─── Main menu container ─── */
 .menu-container {
@@ -1384,10 +1435,19 @@ body.light-mode nav.navbar.fixed-top .navbar-toggler-icon {
   display: grid;
   gap: 4px;
   border: 1px solid var(--hair);
-  background: black;
-  color: whitesmoke;
+  background: rgb(53, 16, 16);
+  color: #E0D4BE;
   padding: 10px;
 }
+
+.contact-card__title {
+  font-size: 0.9rem;
+  color: var(--gold-light);
+}
+
+/*-----------------------------------*\
+          BACK TO TOP BUTTON
+\*----------------------------------- */
 
 #backToTop {
   position: fixed;
@@ -1408,11 +1468,6 @@ body.light-mode nav.navbar.fixed-top .navbar-toggler-icon {
   transform: scale(1.1);
   background-color: #157347;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
 
 /*-----------------------------------*\
           ACCOUNT SIGNUP
@@ -1688,7 +1743,6 @@ textarea.input-field {
   }
 
 }
-
 
 #visual-lineSeperator {
   width: 100%;
